@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fes.mapper.test.TestMapper">
+
+	<resultMap type="com.fes.test.model.Test" id="test" autoMapping="true" />
+
+	<parameterMap type="com.fes.test.model.Test" id="test" />
+
+	<insert id="testAdd" parameterMap="test" useGeneratedKeys="true" keyProperty="id">
+		insert into test (name,pass) values(#{name},#{pass})
+	</insert>
+
+</mapper>
