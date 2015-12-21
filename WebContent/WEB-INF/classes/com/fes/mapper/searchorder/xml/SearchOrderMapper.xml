@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fes.mapper.searchorder.SearchOrderMapper">
+
+	<resultMap type="com.airchina.searchorder.model.SearchOrder" id="searchorder" autoMapping="true" />
+
+	<parameterMap type="com.airchina.searchorder.model.SearchOrder" id="searchorder" />
+
+	<select id="searchOrderListByAll" parameterType="int" resultType="com.airchina.searchorder.model.SearchOrder">  
+  	 	SELECT * FROM bb_sales_order_info_t WHERE accept_date LIKE TO_DATE ('2015-05-21', 'yyyy-mm-dd')
+	</select>  
+
+
+
+</mapper>

@@ -24,6 +24,7 @@
 
 	<!-- 启用以下包中,Spring注释的Bean -->
 	<context:component-scan base-package="com.fes" />
+	<context:component-scan base-package="com.airchina" />
 
 	<!-- 启用 AOP 功能 -->
 	<aop:aspectj-autoproxy />
@@ -32,12 +33,20 @@
 	<bean id="fes" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
       <!-- 基本属性 url、user、password -->
 <!--       <property name="url" value="jdbc:postgresql://localhost/fes?characterEncoding=utf8" /> -->
-      
-      <property name="url" value="jdbc:mysql://localhost:3307/test?characterEncoding=UTF-8" />
-      
+  
+  <!--
+      <property name="url" value="jdbc:mysql://localhost:3307/test?characterEncoding=UTF-8" />     
       <property name="username" value="root" />
       <property name="password" value="123456" />
-
+  -->
+  
+ 	     
+      <property name="url" value="jdbc:oracle:thin:@10.10.111.177:1521:airchina" />
+      <property name="username" value="airchina" />
+      <property name="password" value="airchina" />
+	
+	
+	
       <!-- 配置初始化大小、最小、最大 -->
       <property name="initialSize" value="10" />
       <property name="minIdle" value="10" /> 

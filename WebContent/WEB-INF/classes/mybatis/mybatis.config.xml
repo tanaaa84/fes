@@ -29,7 +29,7 @@
 	<plugins>
 		<plugin interceptor="com.fes.common.mybatis.plugin.OffsetLimitInterceptor">
 			<property name="dialectClass"
-				value="com.fes.common.mybatis.dialect.PostgreSQLDialect" />
+				value="com.fes.common.mybatis.dialect.OracleDialect" />
 		</plugin>
 		<plugin interceptor="com.fes.common.mybatis.plugin.LogInterceptor" />
 	</plugins>

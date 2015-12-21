@@ -28,6 +28,8 @@ public class TestController {
 	public ModelAndView system(HttpServletRequest request, HttpSession session, Test tt) {
 		ModelAndView mav = new ModelAndView();
 
+		System.out.println("1111");
+		
 		mav.setViewName("index");
 		return mav;
 	}
