@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -6,51 +7,63 @@
 
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
 
 <!-- BEGIN HEAD -->
 
 <head>
 
-	<meta charset="utf-8" />
+<meta charset="utf-8" />
 
-	<title>订单管理</title>
+<title>订单管理</title>
 
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-	<meta content="" name="description" />
+<meta content="" name="description" />
 
-	<meta content="" name="author" />
+<meta content="" name="author" />
 
-	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
 
-	<link href="views/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="views/media/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
 
-	<link href="views/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+<link href="views/media/css/bootstrap-responsive.min.css"
+	rel="stylesheet" type="text/css" />
 
-	<link href="views/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="views/media/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css" />
 
-	<link href="views/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+<link href="views/media/css/style-metro.css" rel="stylesheet"
+	type="text/css" />
 
-	<link href="views/media/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="views/media/css/style.css" rel="stylesheet" type="text/css" />
 
-	<link href="views/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="views/media/css/style-responsive.css" rel="stylesheet"
+	type="text/css" />
 
-	<link href="views/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="views/media/css/default.css" rel="stylesheet"
+	type="text/css" id="style_color" />
 
-	<link href="views/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="views/media/css/uniform.default.css" rel="stylesheet"
+	type="text/css" />
 
-	<!-- END GLOBAL MANDATORY STYLES -->
+<!-- END GLOBAL MANDATORY STYLES -->
 
-	<!-- BEGIN PAGE LEVEL STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
 
-	<link rel="stylesheet" type="text/css" href="views/media/css/select2_metro.css" />
+<link rel="stylesheet" type="text/css"
+	href="views/media/css/select2_metro.css" />
 
-	<link rel="stylesheet" href="views/media/css/DT_bootstrap.css" />
+<link rel="stylesheet" href="views/media/css/DT_bootstrap.css" />
 
-	<!-- END PAGE LEVEL STYLES -->
 
-	<link rel="shortcut icon" href="views/media/image/favicon.ico" />
+
+<!-- END PAGE LEVEL STYLES -->
+
+<link rel="shortcut icon" href="views/media/image/favicon.ico" />
 
 </head>
 
@@ -72,9 +85,8 @@
 
 				<!-- BEGIN LOGO -->
 
-				<a class="brand" href="views/index.html">
-
-				<img src="views/media/image/logo.png" alt="logo" />
+				<a class="brand" href="views/index.html"> <img
+					src="views/media/image/logo.png" alt="logo" />
 
 				</a>
 
@@ -82,29 +94,26 @@
 
 				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 
-				<a href="views/javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+				<a href="views/javascript:;" class="btn-navbar collapsed"
+					data-toggle="collapse" data-target=".nav-collapse"> <img
+					src="views/media/image/menu-toggler.png" alt="" />
 
-				<img src="views/media/image/menu-toggler.png" alt="" />
+				</a>
 
-				</a>          
+				<!-- END RESPONSIVE MENU TOGGLER -->
 
-				<!-- END RESPONSIVE MENU TOGGLER -->            
-
-				<!-- BEGIN TOP NAVIGATION MENU -->              
+				<!-- BEGIN TOP NAVIGATION MENU -->
 
 				<ul class="nav pull-right">
 
-					<!-- BEGIN NOTIFICATION DROPDOWN -->   
+					<!-- BEGIN NOTIFICATION DROPDOWN -->
 
-					<li class="dropdown" id="header_notification_bar">
+					<li class="dropdown" id="header_notification_bar"><a
+						href="views/#" class="dropdown-toggle" data-toggle="dropdown">
 
-						<a href="views/#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-warning-sign"></i> <span class="badge">6</span>
 
-						<i class="icon-warning-sign"></i>
-
-						<span class="badge">6</span>
-
-						</a>
+					</a>
 
 						<ul class="dropdown-menu extended notification">
 
@@ -114,113 +123,58 @@
 
 							</li>
 
-							<li>
+							<li><a href="views/#"> <span class="label label-success"><i
+										class="icon-plus"></i></span> New user registered. <span class="time">Just
+										now</span>
 
-								<a href="views/#">
+							</a></li>
 
-								<span class="label label-success"><i class="icon-plus"></i></span>
+							<li><a href="views/#"> <span
+									class="label label-important"><i class="icon-bolt"></i></span>
 
-								New user registered. 
+									Server #12 overloaded. <span class="time">15 mins</span>
 
-								<span class="time">Just now</span>
+							</a></li>
 
-								</a>
+							<li><a href="views/#"> <span class="label label-warning"><i
+										class="icon-bell"></i></span> Server #2 not respoding. <span
+									class="time">22 mins</span>
 
-							</li>
+							</a></li>
 
-							<li>
+							<li><a href="views/#"> <span class="label label-info"><i
+										class="icon-bullhorn"></i></span> Application error. <span
+									class="time">40 mins</span></a></li>
 
-								<a href="views/#">
+							<li><a href="views/#"> <span
+									class="label label-important"><i class="icon-bolt"></i></span>
 
-								<span class="label label-important"><i class="icon-bolt"></i></span>
+									Database overloaded 68%. <span class="time">2 hrs</span>
 
-								Server #12 overloaded. 
+							</a></li>
 
-								<span class="time">15 mins</span>
+							<li><a href="views/#"> <span
+									class="label label-important"><i class="icon-bolt"></i></span>
 
-								</a>
+									2 user IP blocked. <span class="time">5 hrs</span>
 
-							</li>
+							</a></li>
 
-							<li>
+							<li class="external"><a href="views/#">See all
+									notifications <i class="m-icon-swapright"></i>
+							</a></li>
 
-								<a href="views/#">
-
-								<span class="label label-warning"><i class="icon-bell"></i></span>
-
-								Server #2 not respoding.
-
-								<span class="time">22 mins</span>
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="label label-info"><i class="icon-bullhorn"></i></span>
-
-								Application error.
-
-								<span class="time">40 mins</span>
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="label label-important"><i class="icon-bolt"></i></span>
-
-								Database overloaded 68%. 
-
-								<span class="time">2 hrs</span>
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="label label-important"><i class="icon-bolt"></i></span>
-
-								2 user IP blocked.
-
-								<span class="time">5 hrs</span>
-
-								</a>
-
-							</li>
-
-							<li class="external">
-
-								<a href="views/#">See all notifications <i class="m-icon-swapright"></i></a>
-
-							</li>
-
-						</ul>
-
-					</li>
+						</ul></li>
 
 					<!-- END NOTIFICATION DROPDOWN -->
 
 					<!-- BEGIN INBOX DROPDOWN -->
 
-					<li class="dropdown" id="header_inbox_bar">
+					<li class="dropdown" id="header_inbox_bar"><a href="views/#"
+						class="dropdown-toggle" data-toggle="dropdown"> <i
+							class="icon-envelope"></i> <span class="badge">5</span>
 
-						<a href="views/#" class="dropdown-toggle" data-toggle="dropdown">
-
-						<i class="icon-envelope"></i>
-
-						<span class="badge">5</span>
-
-						</a>
+					</a>
 
 						<ul class="dropdown-menu extended inbox">
 
@@ -230,107 +184,51 @@
 
 							</li>
 
-							<li>
+							<li><a href="views/inbox.html?a=view"> <span
+									class="photo"><img src="views/media/image/avatar2.jpg"
+										alt="" /></span> <span class="subject"> <span class="from">Lisa
+											Wong</span> <span class="time">Just Now</span>
 
-								<a href="views/inbox.html?a=view">
+								</span> <span class="message"> Vivamus sed auctor nibh congue
+										nibh. auctor nibh auctor nibh... </span>
 
-								<span class="photo"><img src="views/media/image/avatar2.jpg" alt="" /></span>
+							</a></li>
 
-								<span class="subject">
+							<li><a href="views/inbox.html?a=view"> <span
+									class="photo"><img src="views/media/image/avatar3.jpg"
+										alt="" /></span> <span class="subject"> <span class="from">Richard
+											Doe</span> <span class="time">16 mins</span>
 
-								<span class="from">Lisa Wong</span>
+								</span> <span class="message"> Vivamus sed congue nibh auctor
+										nibh congue nibh. auctor nibh auctor nibh... </span>
 
-								<span class="time">Just Now</span>
+							</a></li>
 
-								</span>
+							<li><a href="views/inbox.html?a=view"> <span
+									class="photo"><img src="views/media/image/avatar1.jpg"
+										alt="" /></span> <span class="subject"> <span class="from">Bob
+											Nilson</span> <span class="time">2 hrs</span>
 
-								<span class="message">
+								</span> <span class="message"> Vivamus sed nibh auctor nibh
+										congue nibh. auctor nibh auctor nibh... </span>
 
-								Vivamus sed auctor nibh congue nibh. auctor nibh
+							</a></li>
 
-								auctor nibh...
+							<li class="external"><a href="views/inbox.html">See all
+									messages <i class="m-icon-swapright"></i>
+							</a></li>
 
-								</span>  
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/inbox.html?a=view">
-
-								<span class="photo"><img src="views/media/image/avatar3.jpg" alt="" /></span>
-
-								<span class="subject">
-
-								<span class="from">Richard Doe</span>
-
-								<span class="time">16 mins</span>
-
-								</span>
-
-								<span class="message">
-
-								Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh
-
-								auctor nibh...
-
-								</span>  
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/inbox.html?a=view">
-
-								<span class="photo"><img src="views/media/image/avatar1.jpg" alt="" /></span>
-
-								<span class="subject">
-
-								<span class="from">Bob Nilson</span>
-
-								<span class="time">2 hrs</span>
-
-								</span>
-
-								<span class="message">
-
-								Vivamus sed nibh auctor nibh congue nibh. auctor nibh
-
-								auctor nibh...
-
-								</span>  
-
-								</a>
-
-							</li>
-
-							<li class="external">
-
-								<a href="views/inbox.html">See all messages <i class="m-icon-swapright"></i></a>
-
-							</li>
-
-						</ul>
-
-					</li>
+						</ul></li>
 
 					<!-- END INBOX DROPDOWN -->
 
 					<!-- BEGIN TODO DROPDOWN -->
 
-					<li class="dropdown" id="header_task_bar">
+					<li class="dropdown" id="header_task_bar"><a href="views/#"
+						class="dropdown-toggle" data-toggle="dropdown"> <i
+							class="icon-tasks"></i> <span class="badge">5</span>
 
-						<a href="views/#" class="dropdown-toggle" data-toggle="dropdown">
-
-						<i class="icon-tasks"></i>
-
-						<span class="badge">5</span>
-
-						</a>
+					</a>
 
 						<ul class="dropdown-menu extended tasks">
 
@@ -340,189 +238,114 @@
 
 							</li>
 
-							<li>
+							<li><a href="views/#"> <span class="task"> <span
+										class="desc">New release v1.2</span> <span class="percent">30%</span>
 
-								<a href="views/#">
-
-								<span class="task">
-
-								<span class="desc">New release v1.2</span>
-
-								<span class="percent">30%</span>
+								</span> <span class="progress progress-success "> <span
+										style="width: 30%;" class="bar"></span>
 
 								</span>
 
-								<span class="progress progress-success ">
+							</a></li>
 
-								<span style="width: 30%;" class="bar"></span>
+							<li><a href="views/#"> <span class="task"> <span
+										class="desc">Application deployment</span> <span
+										class="percent">65%</span>
 
-								</span>
+								</span> <span class="progress progress-danger progress-striped active">
 
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="task">
-
-								<span class="desc">Application deployment</span>
-
-								<span class="percent">65%</span>
+										<span style="width: 65%;" class="bar"></span>
 
 								</span>
 
-								<span class="progress progress-danger progress-striped active">
+							</a></li>
 
-								<span style="width: 65%;" class="bar"></span>
+							<li><a href="views/#"> <span class="task"> <span
+										class="desc">Mobile app release</span> <span class="percent">98%</span>
 
-								</span>
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="task">
-
-								<span class="desc">Mobile app release</span>
-
-								<span class="percent">98%</span>
+								</span> <span class="progress progress-success"> <span
+										style="width: 98%;" class="bar"></span>
 
 								</span>
 
-								<span class="progress progress-success">
+							</a></li>
 
-								<span style="width: 98%;" class="bar"></span>
+							<li><a href="views/#"> <span class="task"> <span
+										class="desc">Database migration</span> <span class="percent">10%</span>
 
-								</span>
+								</span> <span class="progress progress-warning progress-striped">
 
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="task">
-
-								<span class="desc">Database migration</span>
-
-								<span class="percent">10%</span>
+										<span style="width: 10%;" class="bar"></span>
 
 								</span>
 
-								<span class="progress progress-warning progress-striped">
+							</a></li>
 
-								<span style="width: 10%;" class="bar"></span>
+							<li><a href="views/#"> <span class="task"> <span
+										class="desc">Web server upgrade</span> <span class="percent">58%</span>
 
-								</span>
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="task">
-
-								<span class="desc">Web server upgrade</span>
-
-								<span class="percent">58%</span>
+								</span> <span class="progress progress-info"> <span
+										style="width: 58%;" class="bar"></span>
 
 								</span>
 
-								<span class="progress progress-info">
+							</a></li>
 
-								<span style="width: 58%;" class="bar"></span>
+							<li><a href="views/#"> <span class="task"> <span
+										class="desc">Mobile development</span> <span class="percent">85%</span>
 
-								</span>
-
-								</a>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">
-
-								<span class="task">
-
-								<span class="desc">Mobile development</span>
-
-								<span class="percent">85%</span>
+								</span> <span class="progress progress-success"> <span
+										style="width: 85%;" class="bar"></span>
 
 								</span>
 
-								<span class="progress progress-success">
+							</a></li>
 
-								<span style="width: 85%;" class="bar"></span>
+							<li class="external"><a href="views/#">See all tasks <i
+									class="m-icon-swapright"></i></a></li>
 
-								</span>
-
-								</a>
-
-							</li>
-
-							<li class="external">
-
-								<a href="views/#">See all tasks <i class="m-icon-swapright"></i></a>
-
-							</li>
-
-						</ul>
-
-					</li>
+						</ul></li>
 
 					<!-- END TODO DROPDOWN -->
 
 					<!-- BEGIN USER LOGIN DROPDOWN -->
 
-					<li class="dropdown user">
+					<li class="dropdown user"><a href="views/#"
+						class="dropdown-toggle" data-toggle="dropdown"> <img alt=""
+							src="views/media/image/avatar1_small.jpg" /> <span
+							class="username">Bob Nilson</span> <i class="icon-angle-down"></i>
 
-						<a href="views/#" class="dropdown-toggle" data-toggle="dropdown">
-
-						<img alt="" src="views/media/image/avatar1_small.jpg" />
-
-						<span class="username">Bob Nilson</span>
-
-						<i class="icon-angle-down"></i>
-
-						</a>
+					</a>
 
 						<ul class="dropdown-menu">
 
-							<li><a href="views/extra_profile.html"><i class="icon-user"></i> My Profile</a></li>
+							<li><a href="views/extra_profile.html"><i
+									class="icon-user"></i> My Profile</a></li>
 
-							<li><a href="views/page_calendar.html"><i class="icon-calendar"></i> My Calendar</a></li>
+							<li><a href="views/page_calendar.html"><i
+									class="icon-calendar"></i> My Calendar</a></li>
 
-							<li><a href="views/inbox.html"><i class="icon-envelope"></i> My Inbox(3)</a></li>
+							<li><a href="views/inbox.html"><i class="icon-envelope"></i>
+									My Inbox(3)</a></li>
 
-							<li><a href="views/#"><i class="icon-tasks"></i> My Tasks</a></li>
+							<li><a href="views/#"><i class="icon-tasks"></i> My
+									Tasks</a></li>
 
 							<li class="divider"></li>
 
-							<li><a href="views/extra_lock.html"><i class="icon-lock"></i> Lock Screen</a></li>
+							<li><a href="views/extra_lock.html"><i class="icon-lock"></i>
+									Lock Screen</a></li>
 
-							<li><a href="views/login.html"><i class="icon-key"></i> Log Out</a></li>
+							<li><a href="views/login.html"><i class="icon-key"></i>
+									Log Out</a></li>
 
-						</ul>
-
-					</li>
+						</ul></li>
 
 					<!-- END USER LOGIN DROPDOWN -->
 
 				</ul>
 
-				<!-- END TOP NAVIGATION MENU --> 
+				<!-- END TOP NAVIGATION MENU -->
 
 			</div>
 
@@ -542,577 +365,242 @@
 
 		<div class="page-sidebar nav-collapse collapse">
 
-			<!-- BEGIN SIDEBAR MENU -->        
+			<!-- BEGIN SIDEBAR MENU -->
 
 			<ul class="page-sidebar-menu">
 
 				<li>
-
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 
-					<div class="sidebar-toggler hidden-phone"></div>
-
-					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler hidden-phone"></div> <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 
 				</li>
 
 				<li>
-
 					<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
 
 					<form class="sidebar-search">
 
 						<div class="input-box">
 
-							<a href="views/javascript:;" class="remove"></a>
-
-							<input type="text" placeholder="Search..." />
-
-							<input type="button" class="submit" value=" " />
+							<a href="views/javascript:;" class="remove"></a> <input
+								type="text" placeholder="Search..." /> <input type="button"
+								class="submit" value=" " />
 
 						</div>
 
-					</form>
-
-					<!-- END RESPONSIVE QUICK SEARCH FORM -->
+					</form> <!-- END RESPONSIVE QUICK SEARCH FORM -->
 
 				</li>
 
-				<li class="start ">
+				<li class="start "><a href="views/index.html"> <i
+						class="icon-home"></i> <span class="title">Dashboard</span>
 
-					<a href="views/index.html">
+				</a></li>
 
-					<i class="icon-home"></i> 
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-cogs"></i> <span class="title">Layouts</span> <span
+						class="arrow "></span>
 
-					<span class="title">Dashboard</span>
-
-					</a>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-cogs"></i> 
-
-					<span class="title">Layouts</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/layout_horizontal_sidebar_menu.html">
 
-							<a href="views/layout_horizontal_sidebar_menu.html">
+								Horzontal & Sidebar Menu</a></li>
 
-							Horzontal & Sidebar Menu</a>
+						<li><a href="views/layout_horizontal_menu1.html">
 
-						</li>
+								Horzontal Menu 1</a></li>
 
-						<li >
+						<li><a href="views/layout_horizontal_menu2.html">
 
-							<a href="views/layout_horizontal_menu1.html">
+								Horzontal Menu 2</a></li>
 
-							Horzontal Menu 1</a>
+						<li><a href="views/layout_promo.html"> Promo Page</a></li>
 
-						</li>
+						<li><a href="views/layout_email.html"> Email Templates</a></li>
 
-						<li >
+						<li><a href="views/layout_ajax.html"> Content Loading via
+								Ajax</a></li>
 
-							<a href="views/layout_horizontal_menu2.html">
+						<li><a href="views/layout_sidebar_closed.html"> Sidebar
+								Closed Page</a></li>
 
-							Horzontal Menu 2</a>
+						<li><a href="views/layout_blank_page.html"> Blank Page</a></li>
 
-						</li>
+						<li><a href="views/layout_boxed_page.html"> Boxed Page</a></li>
 
-						<li >
+						<li><a href="views/layout_boxed_not_responsive.html">
 
-							<a href="views/layout_promo.html">
+								Non-Responsive Boxed Layout</a></li>
 
-							Promo Page</a>
+					</ul></li>
 
-						</li>
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-bookmark-empty"></i> <span class="title">UI
+							Features</span> <span class="arrow "></span>
 
-						<li >
-
-							<a href="views/layout_email.html">
-
-							Email Templates</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/layout_ajax.html">
-
-							Content Loading via Ajax</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/layout_sidebar_closed.html">
-
-							Sidebar Closed Page</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/layout_blank_page.html">
-
-							Blank Page</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/layout_boxed_page.html">
-
-							Boxed Page</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/layout_boxed_not_responsive.html">
-
-							Non-Responsive Boxed Layout</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-bookmark-empty"></i> 
-
-					<span class="title">UI Features</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/ui_general.html"> General</a></li>
 
-							<a href="views/ui_general.html">
+						<li><a href="views/ui_buttons.html"> Buttons</a></li>
 
-							General</a>
+						<li><a href="views/ui_modals.html"> Enhanced Modals</a></li>
 
-						</li>
+						<li><a href="views/ui_tabs_accordions.html"> Tabs &
+								Accordions</a></li>
 
-						<li >
+						<li><a href="views/ui_jqueryui.html"> jQuery UI
+								Components</a></li>
 
-							<a href="views/ui_buttons.html">
+						<li><a href="views/ui_sliders.html"> Sliders</a></li>
 
-							Buttons</a>
+						<li><a href="views/ui_tiles.html"> Tiles</a></li>
 
-						</li>
+						<li><a href="views/ui_typography.html"> Typography</a></li>
 
-						<li >
+						<li><a href="views/ui_tree.html"> Tree View</a></li>
 
-							<a href="views/ui_modals.html">
+						<li><a href="views/ui_nestable.html"> Nestable List</a></li>
 
-							Enhanced Modals</a>
+					</ul></li>
 
-						</li>
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-table"></i> <span class="title">Form Stuff</span> <span
+						class="arrow "></span>
 
-						<li >
-
-							<a href="views/ui_tabs_accordions.html">
-
-							Tabs & Accordions</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/ui_jqueryui.html">
-
-							jQuery UI Components</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/ui_sliders.html">
-
-							Sliders</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/ui_tiles.html">
-
-							Tiles</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/ui_typography.html">
-
-							Typography</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/ui_tree.html">
-
-							Tree View</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/ui_nestable.html">
-
-							Nestable List</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-table"></i> 
-
-					<span class="title">Form Stuff</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/form_layout.html"> Form Layouts</a></li>
 
-							<a href="views/form_layout.html">
+						<li><a href="views/form_samples.html"> Advance Form
+								Samples</a></li>
 
-							Form Layouts</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/form_samples.html">
-
-							Advance Form Samples</a>
+						<li><a href="views/form_component.html"> Form Components</a>
 
 						</li>
 
-						<li >
+						<li><a href="views/form_wizard.html"> Form Wizard</a></li>
 
-							<a href="views/form_component.html">
+						<li><a href="views/form_validation.html"> Form Validation</a></li>
 
-							Form Components</a>
+						<li><a href="views/form_fileupload.html"> Multiple File
+								Upload</a></li>
 
-						</li>
+						<li><a href="views/form_dropzone.html"> Dropzone File
+								Upload</a></li>
 
-						<li >
+					</ul></li>
 
-							<a href="views/form_wizard.html">
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-briefcase"></i> <span class="title">Pages</span> <span
+						class="arrow "></span>
 
-							Form Wizard</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/form_validation.html">
-
-							Form Validation</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/form_fileupload.html">
-
-							Multiple File Upload</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/form_dropzone.html">
-
-							Dropzone File Upload</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-briefcase"></i> 
-
-					<span class="title">Pages</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/page_timeline.html"> <i
+								class="icon-time"></i> Timeline
+						</a></li>
 
-							<a href="views/page_timeline.html">
+						<li><a href="views/page_coming_soon.html"> <i
+								class="icon-cogs"></i> Coming Soon
+						</a></li>
 
-							<i class="icon-time"></i>
+						<li><a href="views/page_blog.html"> <i
+								class="icon-comments"></i> Blog
+						</a></li>
 
-							Timeline</a>
+						<li><a href="views/page_blog_item.html"> <i
+								class="icon-font"></i> Blog Post
+						</a></li>
 
-						</li>
+						<li><a href="views/page_news.html"> <i
+								class="icon-coffee"></i> News
+						</a></li>
 
-						<li >
+						<li><a href="views/page_news_item.html"> <i
+								class="icon-bell"></i> News View
+						</a></li>
 
-							<a href="views/page_coming_soon.html">
+						<li><a href="views/page_about.html"> <i
+								class="icon-group"></i> About Us
+						</a></li>
 
-							<i class="icon-cogs"></i>
+						<li><a href="views/page_contact.html"> <i
+								class="icon-envelope-alt"></i> Contact Us
+						</a></li>
 
-							Coming Soon</a>
+						<li><a href="views/page_calendar.html"> <i
+								class="icon-calendar"></i> Calendar
+						</a></li>
 
-						</li>
+					</ul></li>
 
-						<li >
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-gift"></i> <span class="title">Extra</span> <span
+						class="arrow "></span>
 
-							<a href="views/page_blog.html">
-
-							<i class="icon-comments"></i>
-
-							Blog</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/page_blog_item.html">
-
-							<i class="icon-font"></i>
-
-							Blog Post</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/page_news.html">
-
-							<i class="icon-coffee"></i>
-
-							News</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/page_news_item.html">
-
-							<i class="icon-bell"></i>
-
-							News View</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/page_about.html">
-
-							<i class="icon-group"></i>
-
-							About Us</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/page_contact.html">
-
-							<i class="icon-envelope-alt"></i>
-
-							Contact Us</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/page_calendar.html">
-
-							<i class="icon-calendar"></i>
-
-							Calendar</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-gift"></i> 
-
-					<span class="title">Extra</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/extra_profile.html"> User Profile</a></li>
 
-							<a href="views/extra_profile.html">
+						<li><a href="views/extra_lock.html"> Lock Screen</a></li>
 
-							User Profile</a>
+						<li><a href="views/extra_faq.html"> FAQ</a></li>
 
-						</li>
+						<li><a href="views/inbox.html"> Inbox</a></li>
 
-						<li >
+						<li><a href="views/extra_search.html"> Search Results</a></li>
 
-							<a href="views/extra_lock.html">
+						<li><a href="views/extra_invoice.html"> Invoice</a></li>
 
-							Lock Screen</a>
+						<li><a href="views/extra_pricing_table.html"> Pricing
+								Tables</a></li>
 
-						</li>
+						<li><a href="views/extra_image_manager.html"> Image
+								Manager</a></li>
 
-						<li >
+						<li><a href="views/extra_404_option1.html"> 404 Page
+								Option 1</a></li>
 
-							<a href="views/extra_faq.html">
+						<li><a href="views/extra_404_option2.html"> 404 Page
+								Option 2</a></li>
 
-							FAQ</a>
+						<li><a href="views/extra_404_option3.html"> 404 Page
+								Option 3</a></li>
 
-						</li>
+						<li><a href="views/extra_500_option1.html"> 500 Page
+								Option 1</a></li>
 
-						<li >
+						<li><a href="views/extra_500_option2.html"> 500 Page
+								Option 2</a></li>
 
-							<a href="views/inbox.html">
+					</ul></li>
 
-							Inbox</a>
+				<li><a class="active" href="views/javascript:;"> <i
+						class="icon-sitemap"></i> <span class="title">3 Level Menu</span>
 
-						</li>
+						<span class="arrow "></span>
 
-						<li >
-
-							<a href="views/extra_search.html">
-
-							Search Results</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_invoice.html">
-
-							Invoice</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_pricing_table.html">
-
-							Pricing Tables</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_image_manager.html">
-
-							Image Manager</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_404_option1.html">
-
-							404 Page Option 1</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_404_option2.html">
-
-							404 Page Option 2</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_404_option3.html">
-
-							404 Page Option 3</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_500_option1.html">
-
-							500 Page Option 1</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/extra_500_option2.html">
-
-							500 Page Option 2</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li>
-
-					<a class="active" href="views/javascript:;">
-
-					<i class="icon-sitemap"></i> 
-
-					<span class="title">3 Level Menu</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li>
+						<li><a href="views/javascript:;"> Item 1 <span
+								class="arrow"></span>
 
-							<a href="views/javascript:;">
-
-							Item 1
-
-							<span class="arrow"></span>
-
-							</a>
+						</a>
 
 							<ul class="sub-menu">
 
@@ -1122,19 +610,12 @@
 
 								<li><a href="views/#">Sample Link 3</a></li>
 
-							</ul>
+							</ul></li>
 
-						</li>
+						<li><a href="views/javascript:;"> Item 1 <span
+								class="arrow"></span>
 
-						<li>
-
-							<a href="views/javascript:;">
-
-							Item 1
-
-							<span class="arrow"></span>
-
-							</a>
+						</a>
 
 							<ul class="sub-menu">
 
@@ -1144,299 +625,161 @@
 
 								<li><a href="views/#">Sample Link 1</a></li>
 
-							</ul>
+							</ul></li>
 
-						</li>
+						<li><a href="views/#"> Item 3 </a></li>
 
-						<li>
+					</ul></li>
 
-							<a href="views/#">
+				<li><a href="views/javascript:;"> <i
+						class="icon-folder-open"></i> <span class="title">4 Level
+							Menu</span> <span class="arrow "></span>
 
-							Item 3
-
-							</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li>
-
-					<a href="views/javascript:;">
-
-					<i class="icon-folder-open"></i> 
-
-					<span class="title">4 Level Menu</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li>
+						<li><a href="views/javascript:;"> <i class="icon-cogs"></i>
 
-							<a href="views/javascript:;">
+								Item 1 <span class="arrow"></span>
 
-							<i class="icon-cogs"></i> 
-
-							Item 1
-
-							<span class="arrow"></span>
-
-							</a>
+						</a>
 
 							<ul class="sub-menu">
 
-								<li>
+								<li><a href="views/javascript:;"> <i class="icon-user"></i>
 
-									<a href="views/javascript:;">
+										Sample Link 1 <span class="arrow"></span>
 
-									<i class="icon-user"></i>
-
-									Sample Link 1
-
-									<span class="arrow"></span>
-
-									</a>
+								</a>
 
 									<ul class="sub-menu">
 
-										<li><a href="views/#"><i class="icon-remove"></i> Sample Link 1</a></li>
+										<li><a href="views/#"><i class="icon-remove"></i>
+												Sample Link 1</a></li>
 
-										<li><a href="views/#"><i class="icon-pencil"></i> Sample Link 1</a></li>
+										<li><a href="views/#"><i class="icon-pencil"></i>
+												Sample Link 1</a></li>
 
-										<li><a href="views/#"><i class="icon-edit"></i> Sample Link 1</a></li>
+										<li><a href="views/#"><i class="icon-edit"></i>
+												Sample Link 1</a></li>
 
-									</ul>
+									</ul></li>
 
-								</li>
+								<li><a href="views/#"><i class="icon-user"></i> Sample
+										Link 1</a></li>
 
-								<li><a href="views/#"><i class="icon-user"></i>  Sample Link 1</a></li>
+								<li><a href="views/#"><i class="icon-external-link"></i>
+										Sample Link 2</a></li>
 
-								<li><a href="views/#"><i class="icon-external-link"></i>  Sample Link 2</a></li>
+								<li><a href="views/#"><i class="icon-bell"></i> Sample
+										Link 3</a></li>
 
-								<li><a href="views/#"><i class="icon-bell"></i>  Sample Link 3</a></li>
+							</ul></li>
 
-							</ul>
+						<li><a href="views/javascript:;"> <i class="icon-globe"></i>
 
-						</li>
+								Item 2 <span class="arrow"></span>
 
-						<li>
-
-							<a href="views/javascript:;">
-
-							<i class="icon-globe"></i> 
-
-							Item 2
-
-							<span class="arrow"></span>
-
-							</a>
+						</a>
 
 							<ul class="sub-menu">
 
-								<li><a href="views/#"><i class="icon-user"></i>  Sample Link 1</a></li>
+								<li><a href="views/#"><i class="icon-user"></i> Sample
+										Link 1</a></li>
 
-								<li><a href="views/#"><i class="icon-external-link"></i>  Sample Link 1</a></li>
+								<li><a href="views/#"><i class="icon-external-link"></i>
+										Sample Link 1</a></li>
 
-								<li><a href="views/#"><i class="icon-bell"></i>  Sample Link 1</a></li>
+								<li><a href="views/#"><i class="icon-bell"></i> Sample
+										Link 1</a></li>
 
-							</ul>
+							</ul></li>
 
-						</li>
+						<li><a href="views/#"> <i class="icon-folder-open"></i>
 
-						<li>
+								Item 3
 
-							<a href="views/#">
+						</a></li>
 
-							<i class="icon-folder-open"></i>
+					</ul></li>
 
-							Item 3
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-user"></i> <span class="title">Login Options</span> <span
+						class="arrow "></span>
 
-							</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-user"></i> 
-
-					<span class="title">Login Options</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/login.html"> Login Form 1</a></li>
 
-							<a href="views/login.html">
+						<li><a href="views/login_soft.html"> Login Form 2</a></li>
 
-							Login Form 1</a>
+					</ul></li>
 
-						</li>
+				<li class="active "><a href="views/javascript:;"> <i
+						class="icon-th"></i> <span class="title">Data Tables</span> <span
+						class="selected"></span> <span class="arrow open"></span>
 
-						<li >
-
-							<a href="views/login_soft.html">
-
-							Login Form 2</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="active ">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-th"></i> 
-
-					<span class="title">Data Tables</span>
-
-					<span class="selected"></span>
-
-					<span class="arrow open"></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/table_basic.html"> Basic Tables</a></li>
 
-							<a href="views/table_basic.html">
+						<li><a href="views/table_responsive.html"> Responsive
+								Tables</a></li>
 
-							Basic Tables</a>
+						<li class="active"><a href="views/table_managed.html">
 
-						</li>
+								Managed Tables</a></li>
 
-						<li >
-
-							<a href="views/table_responsive.html">
-
-							Responsive Tables</a>
+						<li><a href="views/table_editable.html"> Editable Tables</a>
 
 						</li>
 
-						<li class="active">
-
-							<a href="views/table_managed.html">
-
-							Managed Tables</a>
+						<li><a href="views/table_advanced.html"> Advanced Tables</a>
 
 						</li>
 
-						<li >
+					</ul></li>
 
-							<a href="views/table_editable.html">
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-file-text"></i> <span class="title">Portlets</span> <span
+						class="arrow "></span>
 
-							Editable Tables</a>
-
-						</li>
-
-						<li >
-
-							<a href="views/table_advanced.html">
-
-							Advanced Tables</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-file-text"></i> 
-
-					<span class="title">Portlets</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/portlet_general.html"> General
+								Portlets</a></li>
 
-							<a href="views/portlet_general.html">
+						<li><a href="views/portlet_draggable.html"> Draggable
+								Portlets</a></li>
 
-							General Portlets</a>
+					</ul></li>
 
-						</li>
+				<li class=""><a href="views/javascript:;"> <i
+						class="icon-map-marker"></i> <span class="title">Maps</span> <span
+						class="arrow "></span>
 
-						<li >
-
-							<a href="views/portlet_draggable.html">
-
-							Draggable Portlets</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="">
-
-					<a href="views/javascript:;">
-
-					<i class="icon-map-marker"></i> 
-
-					<span class="title">Maps</span>
-
-					<span class="arrow "></span>
-
-					</a>
+				</a>
 
 					<ul class="sub-menu">
 
-						<li >
+						<li><a href="views/maps_google.html"> Google Maps</a></li>
 
-							<a href="views/maps_google.html">
+						<li><a href="views/maps_vector.html"> Vector Maps</a></li>
 
-							Google Maps</a>
+					</ul></li>
 
-						</li>
+				<li class="last "><a href="views/charts.html"> <i
+						class="icon-bar-chart"></i> <span class="title">Visual
+							Charts</span>
 
-						<li >
-
-							<a href="views/maps_vector.html">
-
-							Vector Maps</a>
-
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="last ">
-
-					<a href="views/charts.html">
-
-					<i class="icon-bar-chart"></i> 
-
-					<span class="title">Visual Charts</span>
-
-					</a>
-
-				</li>
+				</a></li>
 
 			</ul>
 
@@ -1472,7 +815,7 @@
 
 			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 
-			<!-- BEGIN PAGE CONTAINER-->        
+			<!-- BEGIN PAGE CONTAINER-->
 
 			<div class="container-fluid">
 
@@ -1496,7 +839,8 @@
 
 								<ul class="inline">
 
-									<li class="color-black current color-default" data-style="default"></li>
+									<li class="color-black current color-default"
+										data-style="default"></li>
 
 									<li class="color-blue" data-style="blue"></li>
 
@@ -1510,59 +854,41 @@
 
 								</ul>
 
-								<label>
-
-									<span>Layout</span>
-
-									<select class="layout-option m-wrap small">
+								<label> <span>Layout</span> <select
+									class="layout-option m-wrap small">
 
 										<option value="fluid" selected>Fluid</option>
 
 										<option value="boxed">Boxed</option>
 
-									</select>
+								</select>
 
-								</label>
-
-								<label>
-
-									<span>Header</span>
-
-									<select class="header-option m-wrap small">
+								</label> <label> <span>Header</span> <select
+									class="header-option m-wrap small">
 
 										<option value="fixed" selected>Fixed</option>
 
 										<option value="default">Default</option>
 
-									</select>
+								</select>
 
-								</label>
-
-								<label>
-
-									<span>Sidebar</span>
-
-									<select class="sidebar-option m-wrap small">
+								</label> <label> <span>Sidebar</span> <select
+									class="sidebar-option m-wrap small">
 
 										<option value="fixed">Fixed</option>
 
 										<option value="default" selected>Default</option>
 
-									</select>
+								</select>
 
-								</label>
-
-								<label>
-
-									<span>Footer</span>
-
-									<select class="footer-option m-wrap small">
+								</label> <label> <span>Footer</span> <select
+									class="footer-option m-wrap small">
 
 										<option value="fixed">Fixed</option>
 
 										<option value="default" selected>Default</option>
 
-									</select>
+								</select>
 
 								</label>
 
@@ -1570,7 +896,7 @@
 
 						</div>
 
-						<!-- END BEGIN STYLE CUSTOMIZER -->  
+						<!-- END BEGIN STYLE CUSTOMIZER -->
 
 						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
 
@@ -1582,23 +908,12 @@
 
 						<ul class="breadcrumb">
 
-							<li>
+							<li><i class="icon-home"></i> <a href="views/index.html">Home</a>
 
-								<i class="icon-home"></i>
+								<i class="icon-angle-right"></i></li>
 
-								<a href="views/index.html">Home</a> 
-
-								<i class="icon-angle-right"></i>
-
-							</li>
-
-							<li>
-
-								<a href="views/#">Data Tables</a>
-
-								<i class="icon-angle-right"></i>
-
-							</li>
+							<li><a href="views/#">Data Tables</a> <i
+								class="icon-angle-right"></i></li>
 
 							<li><a href="views/#">Managed Tables</a></li>
 
@@ -1622,43 +937,68 @@
 
 						<div class="portlet box light-grey">
 
-				
+
 
 							<div class="portlet-body">
-							
-							
-							
-							
 
-								<div class="clearfix">
-									<div class="btn-group">
-										<button id="sample_editable_1_new" class="btn green">
-										Add New 
-										</button>
+
+
+
+								<form action="../fes/search" method="post">
+
+									<div class="controls controls-row">
+										<input name="order_no" class="span3" type="text" placeholder="订单号" />
+										<input class="span2" type="text" placeholder="票号" />
+										 <input class="span1" type="text" placeholder="PNR" /> 
+										 <input class="span2" type="text" placeholder="支付流水号" />
 									</div>
-								</div>
-								
-								
-								
-								
 
-								<table class="table table-striped table-bordered table-hover" id="sample_1">
+									<div class="controls controls-row">
+
+										<div class="input-append date date-picker" data-date="2014-02-12" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+											<input class="m-wrap m-ctrl-medium date-picker" readonly="" size="16" type="text" value="" placeholder="预订时间(S)">
+											<span class="add-on"><i class="icon-calendar"></i></span>
+										</div>
+
+										<div class="input-append date date-picker" data-date="2014-02-13" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
+											<input class="m-wrap m-ctrl-medium date-picker" readonly="" size="16" type="text" value="" placeholder="预订时间(S)">
+											<span class="add-on"><i class="icon-calendar"></i></span>
+										</div>
+										
+										<div class="input-append date date-picker">
+											<button type="submit" class="btn red">开始查询</button>
+										</div>
+										
+									</div>
+
+								</form>
+
+
+
+
+
+
+
+<hr>
+								<table class="table table-striped table-bordered table-hover"
+									id="sample_1">
 
 									<thead>
 
 										<tr>
 
-											<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
+											<th style="width: 8px;"><input type="checkbox"
+												class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
 
-											<th>Username</th>
+											<th class="hidden-480">姓名</th>
 
-											<th class="hidden-480">Email</th>
+											<th class="hidden-480">手机号</th>
 
-											<th class="hidden-480">Points</th>
+											<th class="hidden-480">出发城市</th>
 
-											<th class="hidden-480">Joined</th>
-
-											<th ></th>
+											<th class="hidden-480">到达城市</th>
+					
+											<th class="hidden-240">订单状态</th>
 
 										</tr>
 
@@ -1666,405 +1006,30 @@
 
 									<tbody>
 
+
+									<c:forEach var="order" items="${sList}">
 										<tr class="odd gradeX">
 
 											<td><input type="checkbox" class="checkboxes" value="1" /></td>
 
-											<td>shuxer</td>
+											<td>${order.CONNECT_PERSON}</td>
 
-											<td class="hidden-480"><a href="views/mailto:shuxer@gmail.com">shuxer@gmail.com</a></td>
+											<td class="hidden-480">${order.CONNECT_PHONE}</td>
 
-											<td class="hidden-480">120</td>
+											<td class="hidden-480">${order.DEPARTURE_AIRPORT}</td>
 
-											<td class="center hidden-480">12 Jan 2012</td>
+											<td class="center hidden-480">${order.ARRIVAL_AIRPORT}</td>
 
-											<td ><span class="label label-success">Approved</span></td>
+											<td><span class="label label-${(order.REGISTER_STATUS == 3) ? 'success' : 'warning'}">${order.REGISTER_STATUS}</span></td>
 
-										</tr>
+											
 
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>looper</td>
-
-											<td class="hidden-480"><a href="views/mailto:looper90@gmail.com">looper90@gmail.com</a></td>
-
-											<td class="hidden-480">120</td>
-
-											<td class="center hidden-480">12.12.2011</td>
-
-											<td ><span class="label label-warning">Suspended</span></td>
 
 										</tr>
 
-										<tr class="odd gradeX">
+									</c:forEach>
 
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
 
-											<td>userwow</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@yahoo.com">userwow@yahoo.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.12.2012</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>user1wow</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">userwow@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.12.2012</td>
-
-											<td ><span class="label label-inverse">Blocked</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>restest</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">test@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.12.2012</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>foopl</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">19.11.2010</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>weep</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">19.11.2010</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>coop</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">19.11.2010</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>pppol</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">19.11.2010</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>test</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">19.11.2010</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>userwow</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">userwow@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.12.2012</td>
-
-											<td ><span class="label label-inverse">Blocked</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>test</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">test@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.12.2012</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>goop</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.11.2010</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>weep</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">15.11.2011</td>
-
-											<td ><span class="label label-inverse">Blocked</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>toopl</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">16.11.2010</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>userwow</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">userwow@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">9.12.2012</td>
-
-											<td ><span class="label label-inverse">Blocked</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>tes21t</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">test@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">14.12.2012</td>
-
-											<td ><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>fop</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">13.11.2010</td>
-
-											<td ><span class="label label-warning">Suspended</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>kop</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">17.11.2010</td>
-
-											<td><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>vopl</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">19.11.2010</td>
-
-											<td><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>userwow</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">userwow@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.12.2012</td>
-
-											<td><span class="label label-inverse">Blocked</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>wap</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">test@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">12.12.2012</td>
-
-											<td><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>test</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">19.12.2010</td>
-
-											<td><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>toop</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">17.12.2010</td>
-
-											<td><span class="label label-success">Approved</span></td>
-
-										</tr>
-
-										<tr class="odd gradeX">
-
-											<td><input type="checkbox" class="checkboxes" value="1" /></td>
-
-											<td>weep</td>
-
-											<td class="hidden-480"><a href="views/mailto:userwow@gmail.com">good@gmail.com</a></td>
-
-											<td class="hidden-480">20</td>
-
-											<td class="center hidden-480">15.11.2011</td>
-
-											<td><span class="label label-success">Approved</span></td>
-
-										</tr>
 
 									</tbody>
 
@@ -2099,17 +1064,11 @@
 
 	<div class="footer">
 
-		<div class="footer-inner">
-
-			2013 &copy; Metronic by keenthemes.
-
-		</div>
+		<div class="footer-inner">2015 &copy; AirChina All rights reserved.</div>
 
 		<div class="footer-tools">
 
-			<span class="go-top">
-
-			<i class="icon-angle-up"></i>
+			<span class="go-top"> <i class="icon-angle-up"></i>
 
 			</span>
 
@@ -2123,13 +1082,16 @@
 
 	<!-- BEGIN CORE PLUGINS -->
 
-	<script src="views/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+	<script src="views/media/js/jquery-1.10.1.min.js"
+		type="text/javascript"></script>
 
-	<script src="views/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<script src="views/media/js/jquery-migrate-1.2.1.min.js"
+		type="text/javascript"></script>
 
 	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 
-	<script src="views/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+	<script src="views/media/js/jquery-ui-1.10.1.custom.min.js"
+		type="text/javascript"></script>
 
 	<script src="views/media/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -2139,15 +1101,19 @@
 
 	<script src="views/media/js/respond.min.js"></script>  
 
-	<![endif]-->   
+	<![endif]-->
 
-	<script src="views/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="views/media/js/jquery.slimscroll.min.js"
+		type="text/javascript"></script>
 
-	<script src="views/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+	<script src="views/media/js/jquery.blockui.min.js"
+		type="text/javascript"></script>
 
-	<script src="views/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+	<script src="views/media/js/jquery.cookie.min.js"
+		type="text/javascript"></script>
 
-	<script src="views/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+	<script src="views/media/js/jquery.uniform.min.js"
+		type="text/javascript"></script>
 
 	<!-- END CORE PLUGINS -->
 
@@ -2155,7 +1121,8 @@
 
 	<script type="text/javascript" src="views/media/js/select2.min.js"></script>
 
-	<script type="text/javascript" src="views/media/js/jquery.dataTables.js"></script>
+	<script type="text/javascript"
+		src="views/media/js/jquery.dataTables.js"></script>
 
 	<script type="text/javascript" src="views/media/js/DT_bootstrap.js"></script>
 
@@ -2165,21 +1132,36 @@
 
 	<script src="views/media/js/app.js"></script>
 
-	<script src="views/media/js/table-managed.js"></script>     
+	<script src="views/media/js/table-managed.js"></script>
 
 	<script>
+		jQuery(document).ready(function() {
 
-		jQuery(document).ready(function() {       
+			App.init();
 
-		   App.init();
-
-		   TableManaged.init();
+			TableManaged.init();
 
 		});
-
 	</script>
 
-<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script></body>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push([ '_setAccount', 'UA-37564768-1' ]);
+		_gaq.push([ '_setDomainName', 'keenthemes.com' ]);
+		_gaq.push([ '_setAllowLinker', true ]);
+		_gaq.push([ '_trackPageview' ]);
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://'
+					: 'http://')
+					+ 'stats.g.doubleclick.net/dc.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
 
 <!-- END BODY -->
 
