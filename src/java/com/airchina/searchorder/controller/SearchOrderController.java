@@ -1,15 +1,10 @@
 package com.airchina.searchorder.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -20,8 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.airchina.searchorder.model.SearchOrder;
 import com.airchina.searchorder.service.ISearchOrderService;
-import com.alibaba.fastjson.JSON;
-import com.fes.common.mvc.model.JsonMes;
 import com.fes.test.model.Test;
 
 @Controller
@@ -44,10 +37,14 @@ public class SearchOrderController {
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public String home(Locale locale, Model model, HttpServletRequest request) {
 		String orderNo = request.getParameter("order_no");
-		if(orderNo != null){
+		if(orderNo != null && !orderNo.isEmpty()){
+			List<SearchOrder> sList = isos.searchOrderListByOrderNo(orderNo);
+			model.addAttribute("sList", sList );
+			System.out.println("1");
+		}else {
 			List<SearchOrder> sList = isos.searchOrderListByAll();
 			model.addAttribute("sList", sList );
-			System.out.println(sList.get(0).getUSER_ID());
+			System.out.println("n");
 		}
 		
 		return "search_order";

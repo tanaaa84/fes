@@ -14,5 +14,8 @@
 	</select>  
 
 
+	<select id="searchOrderListByOrderNo" parameterType="String" resultType="com.airchina.searchorder.model.SearchOrder">  
+  	 	SELECT * FROM bb_sales_order_info_t WHERE REGISTER_NUMBER=#{orderNo}
+	</select>
 
 </mapper>

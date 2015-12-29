@@ -57,5 +57,13 @@ public class SearchOrderServiceImpl implements ISearchOrderService {
 		// TODO Auto-generated method stub
 		return som.searchOrderListByName(name);
 	}
+	
+	
+	@Override
+	public List<SearchOrder> searchOrderListByOrderNo(String orderNo) {
+		// TODO Auto-generated method stub
+		return som.searchOrderListByOrderNo(orderNo);
+	}
+	
 
 }
