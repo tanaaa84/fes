@@ -16,6 +16,8 @@
 
 	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
 	<mvc:annotation-driven />
+	
+
 
 	<!-- 千万要加上这句话，否则图片出不来了，记住记住 -->
 	<mvc:default-servlet-handler />
@@ -92,6 +94,14 @@
 		<property name="basePackage" value="com.fes.mapper"></property>
 	</bean>
 
+	<mvc:interceptors>
+	<mvc:interceptor>
+	<mvc:mapping path="/*"/>
+	<bean class="com.airchina.interceptor.CommonInterceptor"></bean>
+	</mvc:interceptor>
+	</mvc:interceptors>
+
+	
 	<!-- 配置连接池 -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="fes"></property>
