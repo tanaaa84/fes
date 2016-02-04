@@ -333,32 +333,23 @@ public class PassbookController {
 	public static final byte[] readBytes(InputStream is, int contentLen) {
 		if (contentLen > 0) {
 			int readLen = 0;
-
 			int readLengthThisTime = 0;
-
 			byte[] message = new byte[contentLen];
-
 			try {
-
 				while (readLen != contentLen) {
-
 					readLengthThisTime = is.read(message, readLen, contentLen
 							- readLen);
-
 					if (readLengthThisTime == -1) {// Should not happen.
 						break;
 					}
-
 					readLen += readLengthThisTime;
 				}
-
 				return message;
 			} catch (IOException e) {
 				// Ignore
 				// e.printStackTrace();
 			}
 		}
-
 		return new byte[] {};
 	}
 
@@ -366,9 +357,21 @@ public class PassbookController {
 	
 	
 	
+	@RequestMapping(value = "/test1")
+	public String test1(HttpServletRequest request) {
+		System.out.println("ue------" + request.getMethod());
+		return "forward:/test2"; 
 	
-
+	}
 	
+	
+	
+	@RequestMapping(value = "/test2")
+	public String test2(HttpServletRequest request) {
+		System.out.println("update3------" + request.getMethod());
+		 return ""; 
+	
+	}
 	
 	
 }
