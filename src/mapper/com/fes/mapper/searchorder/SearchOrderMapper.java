@@ -22,4 +22,6 @@ public interface SearchOrderMapper {
 	public List<SearchOrder> searchOrderListByName(@Param(value = "name") String name);
 	
 	public List<SearchOrder> searchOrderListByOrderNo(@Param(value = "orderNo") String orderNo);
+	
+	public List<SearchOrder> searchOrderListByParam(@Param(value = "orderNo") String orderNo);
 }

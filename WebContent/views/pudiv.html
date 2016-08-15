@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <!-- iOS Safari 全屏状态下的状态栏样式  default | balck | black-translucent-->
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+    <meta name="apple-touch-fullscreen" content="no"/>
+<title>点击文字弹出层</title> 
+<style type="text/css"> 
+<!-- 
+*{font-size:12px;font-family:Verdana, Geneva, sans-serif;line-height:14px} 
+a{color:#039} 
+a:hover{color:#f60} 
+.pop{position:absolute;left:40px;top:20px;width:300px;height:100px;background:#eee;border:1px solid #ccc} 
+.pop_head{position:relative;height:20px;background:#ccc} 
+.pop_head a{position:absolute;right:8px;line-height:20px;color:#000;text-decoration:none} 
+.pop_head a:hover{color:#f60;text-decoration:none} 
+.pop_body{padding:8px} 
+.popdiv{display:block;}
+.popbox{ position:relative; height:150px; width:400px; background:#030;}
+--> 
+</style> 
+</head> 
+<body> 
+<!--首先设置一个层:-->
+<div class="popbox"> 
+<div id="pop" class="pop" style="display:none"> 
+<div class="pop_head"><a href="javascript:void(0);" onclick="hide()">关闭</a></div> 
+<div class="pop_body">谢谢光临……</div> 
+</div> 
+<!--弹出层的按钮:--> 
+<a href="javascript:void(0);" onclick="show();" class="popdiv">弹出按钮</a> 
+</div>
+<script type="text/javascript"> 
+var EX = {
+  addEvent:function(k,v){
+    var me = this;
+    if (me.addEventListener)
+      me.addEventListener(k, v, false);
+    else if(me.attachEvent)
+      me.attachEvent("on" + k, v);
+    else
+      me["on" + k] = v;
+  },
+  removeEvent:function(k,v){
+    var me = this;
+    if (me.removeEventListener)
+      me.removeEventListener(k, v, false);
+    else if (me.detachEvent)
+      me.detachEvent("on" + k, v);
+    else
+      me["on" + k] = null;
+  },
+  stop:function(evt){
+    evt = evt || window.event;
+    evt.stopPropagation?evt.stopPropagation():evt.cancelBubble=true;
+  }
+};
+document.getElementById('pop').onclick = EX.stop;
+var url = '#'; 
+function show(){ 
+var o = document.getElementById('pop'); 
+o.style.display = ""; 
+setTimeout(function(){EX.addEvent.call(document,'click',hide);});
+} 
+function hide(){ 
+var o = document.getElementById('pop'); 
+o.style.display = "none"; 
+EX.removeEvent.call(document,'click',hide);
+} 
+</script> 
+</body> 
+</html>
+</td>
+	  </tr>
+	</table>

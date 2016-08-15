@@ -1,0 +1,731 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>国航特惠日 - 国航官网</title>
+    <!-- 纠正：user-scalable=no 是需要的，发现在某些设备上仅有 initial 和 maximum 仍然无法阻止缩放 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <!-- touch-icon 指定桌面图标-->
+    <link rel="shortcut icon" href="http://m.airchina.com.cn/airchina/images2/ca_logo.ico" type="image/x-icon"/>
+    <!-- 从桌面 icon 启动 iOS Safari 是否进入全屏状态（App模式） yes | no-->
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <!-- iOS Safari 全屏状态下的状态栏样式  default | balck | black-translucent-->
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+    <!-- iOS 设备上禁止将数字识别为可点击的 tel link -->
+    <meta content="telephone=no" name="format-detection"/>
+    <!-- 指定的ios app -->
+    <meta name="apple-itunes-app" content="app-id=361964929"/>
+    <!-- 设置 keywords -->
+    <meta name="keywords" content="特惠，特惠日，国航，特价，直减，优惠码，银联">
+    <!-- 设置 description -->
+    <meta name="description" content="3.3国航特惠日,欧美澳非2080起,优惠“码”上看见，国内最高直减30%，银联信用卡立减62元">
+
+    <style type="text/css">
+        * {margin:0;padding:0}
+        html, h1, h2, h3, h4, h5, h6 {
+            font-size:100%;
+            font-weight:normal;
+        }
+        table {
+            border-collapse:collapse;
+            border-spacing:0;
+        }
+        a {
+            text-decoration:none;
+            color: #666;
+        }
+        ul, ol, dl, li, dd {
+            list-style:none;
+        }
+        a, img {
+            border:none;
+        }
+        .clearfix:before, .clearfix:after {
+            content: "\0020";
+            height: 0px;
+            display: block;
+            visibility: hidden;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        .clearfix {
+            *zoom: 1;
+        }           /*  adding the clearfix functionality */
+        html,body {width:100%; -webkit-text-size-adjust:100%;}
+        body {
+            font-family: Microsoft YaHei,SimHei,SimSun;
+        }
+        #header {
+            display: none;
+            height: 2.0rem;
+            width: 100%;
+            background-color: #C00008;
+        }
+        #title {
+            width: 100%;
+            color: #fff;
+            line-height: 2.0rem;
+            letter-spacing: .1rem;
+            text-align: center;
+        }
+        #wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            margin: 0 auto;
+            padding-bottom: 2.24rem;
+            background: #e8ffec;
+            overflow: hidden;
+        }
+        #wrapper img {
+            width: 100%;
+            vertical-align: top;
+        }
+        .air-group1{
+            width: 100%;
+            height: 6.175rem;
+            background: url("images/grou1_bg.jpg") center top no-repeat;
+            background-size: 100% 100%;
+        }
+        .air-pbox{
+            padding: 1.875rem 0 0 .725rem;
+        }
+        .air-p1{
+            line-height: .8rem;
+            color: #515151;
+            font-size: .6rem;
+        }
+        .air-p2{
+            color: #515151;
+            font-size: .75rem;
+            line-height: 1.075rem;
+        }
+        .air-p3{
+            color: #515151;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 1.35rem;
+        }
+        .air-p3 b{
+            font-size: 1rem;
+            color: #e44141;
+        }
+
+        .air-group2,.air-group4{
+            padding-left: 1.875%;
+            width: 98.125%;
+        }
+        .air-group2 h3,.air-group4 h3{
+            font-size: .55rem;
+            color: #393939;
+            font-weight: bold;
+            padding-bottom: 2%;
+        }
+        .air-group2 p{
+            width: 92.1875%;
+            font-size: .5rem;
+            line-height: .75rem;
+            color: #393939;
+        }
+        .air-group2 a{
+            font-size: .5rem;
+            color: #e44141;
+            text-decoration: underline;
+        }
+        .air-tits p{
+            font-size: .95rem;
+            color: #4e8c09;
+            font-weight: bold;
+            line-height: 1.4rem;
+            text-align: center;
+        }
+        .air-tits1{
+            width: 100%;
+            background: url("images/tit1.jpg") center top no-repeat;
+            height: 2.825rem;
+            background-size: 100% 100%;
+            margin-top: .95rem;
+        }
+        .air-tits2{
+            width: 100%;
+            background: url("images/tit2.jpg") center top no-repeat;
+            height: 3.125rem;
+            background-size: 100% 100%;
+            margin-top: .675rem;
+        }
+        .air-tits1 p{
+            width: 9.6rem;
+            padding: .75rem 0 0 4.15rem;
+        }
+        .air-tits2 p{
+            width: 10rem;
+            padding: .975rem 0 0 2.9rem;
+        }
+        .air-group3{
+            width: 100%;
+            overflow: hidden;
+            background: url("images/quebg.jpg") right bottom no-repeat;
+            background-size: 5.775rem 3.4rem;
+        }
+        .air-ul{
+            width: 120%;
+            overflow: hidden;
+            padding-left: 2%;
+        }
+        .air-ul li{
+            float: left;
+            width: 7.575rem;
+            height: 2.425rem;
+            background: url("images/que.jpg") center top no-repeat;
+            background-size: 100% 100%;
+            margin: 0 .35rem .6rem 0;
+        }
+        .air-left{
+            float: left;
+            width: 55.78%;
+            overflow: hidden;
+        }
+        .air-left .air-qpla{
+            width: 100%;
+            text-align: center;
+            font-size: .5rem;
+            color: #ffffff;
+            line-height: .85rem;
+            padding-top: .225rem;
+        }
+        .air-left .air-money{
+            font-size: .5rem;
+            color: #fefefe;
+            text-align: center;
+        }
+        .air-left .air-money b{
+            font-size: .95rem;
+        }
+        .air-right{
+            float: left;
+            width: 44.22%;
+            overflow: hidden;
+        }
+        .air-right p{
+            width: 100%;
+            text-align: center;
+            line-height: .9rem;
+            padding-top: .25rem;
+            font-size: .5rem;
+            color: #ffffff;
+        }
+        .air-right span{
+            display: block;
+            width: 2.5rem;
+            height: .8rem;
+            text-align: center;
+            font-size: .45rem;
+            color: #636363;
+            line-height: .8rem;
+            margin-left: .35rem;
+
+        }
+
+        .air-group4 td{
+            font-size: .5rem;
+            color: #393939;
+            line-height: .75rem;
+        }
+
+        .air-group5{
+            width: 97%;
+            margin: 0 auto;
+        }
+        .air-p4{
+            font-size: .55rem;
+            color: #393939;
+            line-height: .7rem;
+        }
+
+        .air-listul{
+            width: 120%;
+            margin-top: .375rem;
+        }
+        .air-listul li{
+            float: left;
+            width: 4.95rem;
+            height: 4.95rem;
+            border: .075rem #4e8b09 solid;
+            background: #4e8b09;
+            margin: 0 .125rem .25rem 0;
+            overflow: hidden;
+        }
+        .air-listul li img{
+            margin-bottom: .1rem;
+        }
+        .air-listul li td{
+            font-size: .5rem;
+            color: #ffffff;
+            height: 1.1rem;
+        }
+        .air-listul li td a{
+            font-size: .5rem;
+            color: #ffea00;
+        }
+        .air-fw{
+            font-weight: bold;
+        }
+        .air-plane{
+           width: .35rem;
+            height: 1.1rem;
+            background: url("images/plane.jpg") center top no-repeat;
+            background-size: 100% 100%;
+        }
+        .air-group5 h3{
+            margin-top: .5rem;
+        }
+
+        /*弹窗*/
+        .cup-mask {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.3;
+            fliter: alpha(opacity=0.3);
+            z-index: 1;
+            _height: 1500px;
+            /* older safari/Chrome browsers */
+            -webkit-opacity: 0.3;
+            /* Netscape and Older than Firefox 0.9 */
+            -moz-opacity: 0.3;
+            /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
+            -khtml-opacity: 0.3;
+            /*This works in IE 8 & 9 too*/
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            /*IE4-IE9*/
+            filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+
+        }
+        .cup-tan{
+            display: none;
+            width: 13.65rem;
+            height: 11.025rem;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -6.825rem;
+            margin-top: -5.5125rem;
+            z-index: 3;
+            background: url("images/tanbg.png") center top no-repeat;
+            background-size: 100% 100%;
+        }
+        .cup-tan a{
+            position: absolute;
+            width: 1.05rem;
+            height: 1.05rem;
+            top: .1rem;
+            right: .1rem;
+            z-index: 99;
+            background: url("images/close.png") center top no-repeat;
+            background-size: 100% 100%;
+        }
+        .cup-citybox{
+            padding: 1.2rem 0 0 .975rem;
+            width: 12.15rem;
+            overflow: hidden;
+        }
+        .cup-citys{
+            padding-bottom: .35rem;
+        }
+        .cup-citybox p{
+            font-size: .5rem;
+            line-height: .55rem;
+            color: #393939;
+            margin-top: .2rem;
+        }
+        .cup-citybox span{
+            display: block;
+            width: 1.95rem;
+            height: .85rem;
+            padding-left: .325rem;
+            background: url("images/flag.png") center top no-repeat;
+            background-size: 100% 100%;
+            font-size: .6rem;
+            color: #fdfdfd;
+            font-weight: bold;
+            line-height: .85rem;
+        }
+
+    </style>
+</head><script>!function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/16+"px"}var b=null;window.addEventListener("resize",function(){clearTimeout(b),b=setTimeout(a,300)},!1),a()}(window);</script>
+<body>
+<header id="header"><div id="title">中国国航</div></header>
+<div id="wrapper">
+    <!-- topBanner -->
+    <div>
+        <img src="images/topbanner.jpg">
+    </div>
+    <div class="air-group1">
+        <div class="air-pbox">
+            <p class="air-p1">中国大陆39个城市出发至</p>
+            <p class="air-p2">欧洲、美洲、澳洲、非洲</p>
+            <p class="air-p3">往返价格<b>2080元</b>起</p>
+        </div>
+    </div>
+    <div class="air-group2">
+        <h3>温馨提示：</h3>
+        <p>购票日期：2016年3月3日(仅限当天)</p>
+        <p>旅行日期：2016年3月27日---2016年5月15日</p>
+        <p>停留期限制：最短停留5天 ，最长停留1个月</p>
+        <p>参与活动航线：国航实际承运且挂CA代码，中国大陆始发国际直达航班及以上39个城市24小时内转机联程航班，（24小时以外的中转、信息中出现“享”或“共享”字样的航班不适用）</p>
+
+        <a href="javascript:;" id="J_click">39个出发城市</a>
+    </div>
+    <div class="air-tits air-tits1">
+        <p>国际优惠“码”上到</p>
+    </div>
+    <div class="air-group3">
+        <ul class="air-ul clearfix">
+            <li>
+                <div class="air-left">
+                    <p class="air-qpla">欧洲非洲巴西</p>
+                    <p class="air-money">￥<b>300</b>优惠券</p>
+                </div>
+                <div class="air-right">
+                    <p>优惠代码</p>
+                    <span>TH300A</span>
+                </div>
+            </li>
+            <li>
+                <div class="air-left">
+                    <p class="air-qpla">澳洲</p>
+                    <p class="air-money">￥<b>300</b>优惠券</p>
+                </div>
+                <div class="air-right">
+                    <p>优惠代码</p>
+                    <span>TH300B</span>
+                </div>
+            </li>
+            <li>
+                <div class="air-left">
+                    <p class="air-qpla">美国</p>
+                    <p class="air-money">￥<b>300</b>优惠券</p>
+                </div>
+                <div class="air-right">
+                    <p>优惠代码</p>
+                    <span>TH300C</span>
+                </div>
+            </li>
+            <li>
+                <div class="air-left">
+                    <p class="air-qpla">加拿大、古巴</p>
+                    <p class="air-money">￥<b>300</b>优惠券</p>
+                </div>
+                <div class="air-right">
+                    <p>优惠代码</p>
+                    <span>TH300D</span>
+                </div>
+            </li>
+            <li>
+                <div class="air-left">
+                    <p class="air-qpla">亚太日韩港澳台</p>
+                    <p class="air-money">￥<b>100</b>优惠券</p>
+                </div>
+                <div class="air-right">
+                    <p>优惠代码</p>
+                    <span>TH100A</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="air-group4">
+        <h3>温馨提示：</h3>
+        <table width="95%" cellpadding="0" cellspacing="0" border="0" align="center">
+            <tr>
+                <td valign="top">1、</td>
+                <td>本优惠码适用于2016年3月27日至2016年12月31日之间的国际旅行。不适用于国际超值特价舱位 。</td>
+            </tr>
+            <tr>
+                <td valign="top">2、</td>
+                <td>仅限国航实际承运航线（航班信息中出现“享”字标识不参与）</td>
+            </tr>
+            <tr>
+                <td valign="top">3、</td>
+                <td>无线客户端PC码适用说明：在“添加乘机信息”页面最下方点击“优惠券”，根据提示，在“请输入优惠码信息”栏中，输入正确的优惠代码，点击“使用”即可。</td>
+            </tr>
+        </table>
+    </div>
+    <div class="air-tits air-tits2">
+        <p>国内航线最高直减30%</p>
+    </div>
+    <div class="air-group5">
+        <p class="air-p4">旅行日期： 2016年3月8日-2016年3月15日</p>
+        <div class="air-listbox">
+            <ul class="air-listul clearfix">
+                <li>
+                    <img src="images/pic1.jpg" alt="北京→成都">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;成都</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;720元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic2.jpg" alt="北京→长沙">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;长沙</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;740元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic3.jpg" alt="北京→南京">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;南京</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;600元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic4.jpg" alt="北京→合肥">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;合肥</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;340元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic5.jpg" alt="北京→西安">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;西安</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;360元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic6.jpg" alt="北京→厦门">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;厦门</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;750元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic7.jpg" alt="北京→威海">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;威海</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;310元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic8.jpg" alt="北京→大同">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;大同</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;260元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic9.jpg" alt="北京→烟台">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;烟台</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;240元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic10.jpg" alt="北京→大连">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;大连</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;240元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic11.jpg" alt="广州→重庆">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>广州&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;重庆</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;430元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <img src="images/pic12.jpg" alt="北京→广州">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td>北京&nbsp;</td>
+                            <td class="air-plane"></td>
+                            <td>&nbsp;广州</td>
+                            <td class="air-fw"><a href="#" target="_blank">&nbsp;&nbsp;650元</a>起</td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <p class="air-p4">适用舱位：F\A\C\D\J\Z\W\Y\B\M\H\K\L\Q</p>
+    </div>
+    <div class="air-group4 air-group5">
+        <h3>温馨提示：</h3>
+        <table width="95%" cellpadding="0" cellspacing="0" border="0" align="center">
+            <tr>
+                <td valign="top">1、</td>
+                <td>销售日期：2016年3月3日（限当日），特价产品数量有限，可能出现售罄的情况，最终价格以购买时为准</td>
+            </tr>
+            <tr>
+                <td valign="top">2、</td>
+                <td>购买渠道：国航官网境内网站、国航无线客户端、国航旗舰店（其中银联立减优惠仅限国航官网境内网站使用）。</td>
+            </tr>
+            <tr>
+                <td valign="top">3、</td>
+                <td>参与活动航线：国航实际承运且挂CA代码的中国大陆始发国际直达航班及中转、联程、航班（信息中出现“享”或“共享”字样及赤塔航线不适用）。</td>
+            </tr>
+            <tr>
+                <td valign="top">4、</td>
+                <td>活动列明价格均为机票价格，不含各种税费及机场建设费。</td>
+            </tr>
+        </table>
+    </div>
+    <div class="cup-mask" id="J_Mask"></div>
+    <div class="cup-tan" id="J_tanbox">
+        <div class="cup-citybox">
+            <div class="cup-citys">
+                <span class="cup-coin">北方</span>
+                <p>北京、长春、大同、丹东、大连、大庆、哈尔滨、佳木斯、牡丹江、齐齐哈尔、巴彦淖尔、沈阳</p>
+            </div>
+            <div class="cup-citys">
+                <span class="cup-coin">西部</span>
+                <p>重庆、成都、贵阳、兰州、西安、西宁、宜昌、运城</p>
+            </div>
+            <div class="cup-citys">
+                <span class="cup-coin">华南</span>
+                <p>北海、广州、长沙、柳州、南宁、深圳、汕头、武汉</p>
+            </div>
+            <div class="cup-citys">
+                <span class="cup-coin">华东</span>
+                <p>上海、福州、合肥、杭州、南昌、青岛、威海、厦门、烟台</p>
+            </div>
+        </div>
+        <a href="javascript:;" id="J_close" class="J_close"></a>
+    </div>
+</div>
+
+<script src="http://www.airchina.com.cn/cn/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+    $(function() {
+
+//tanchukuang
+
+        $('#J_click').click(function () {
+            $('#J_Mask, #J_tanbox').show();
+        });
+//   close
+        $('#J_Mask, .J_close').click(function() {
+            $('#J_Mask, #J_tanbox').hide();
+        });
+
+    });
+
+    </script>
+
+<!--SiteCatalyst code version: H.22.1.
+Copyright 1996-2011 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="/cn/js/s_code.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+/* You may give each page an identifying name, server, and channel on
+ the next lines. */
+s.pageName = "";
+s.channel=""
+s.pageType="cn"
+s.prop1=""
+s.prop2=""
+s.prop3=""
+s.prop4=""
+/* Conversion Variables */
+s.events=""
+s.products=""
+s.purchaseID=""
+s.eVar1=""
+s.eVar2=""
+s.eVar3=""
+s.eVar4=""
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+vars_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+<noscript>
+    <img src="http://airchina.112.2o7.net/b/ss/acna-dom2-en-dev/1/H.22.1--NS/0?[AQB]&cdp=3&[AQE]"
+         height="1" width="1" border="0" alt="" />
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.22.1. -->
+<!-- Google Code for Main List -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1066438046;
+    var google_conversion_label = "_yzpCOakzAMQnpvC_AM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1066438046/?value=0&amp;label=_yzpCOakzAMQnpvC_AM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+<script type='text/javascript'>
+    var _fxcmd = _fxcmd || [];
+    _fxcmd.sid = 'bd1f0ba39f33d686b12c81f33e3c5a2f';
+    (function () {
+        var _pzfx = document['createElement']('script');
+        _pzfx.type = 'text/javascript';
+        _pzfx.async = true;
+        _pzfx.src = 'http://static.w3t.cn/fx/1/1/fx.js';
+        var sc = document.getElementsByTagName('script')[0];
+        sc.parentNode.insertBefore(_pzfx, sc);
+    })();
+</script>
+
+</body>
+</html>

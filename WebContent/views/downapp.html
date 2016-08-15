@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>中国国航手机应用下载</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/amazeui.flat.min.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+</head>
+<body id="full-page">
+<div id="titlebar">
+    <div class="am-u-sm-4" id="logo"></div>
+    <div style="color:#fff;padding-left:1rem;">
+        <p class="am-text-lg" style="padding:0rem;margin:0rem;" id="title1">&nbsp;中国国航APP</p>
+        <p class="am-text-xs" style="padding:0rem;margin:0rem;" id="title2">&nbsp;&nbsp;欢迎使用国航APP</p>
+    </div>
+</div>
+<img width="72%" class="am-margin-left am-margin-top-lg" id="title">
+<p class="am-text-lg am-margin-left am-margin-top" id="info" style="padding-right:1rem;font-weight:500;color:#fff;">
+</p>
+<div class="am-g">
+<div class="am-u-sm-6" >
+<a href="javascript:downios()">
+<img width="90%" src="assets/i/ap.png"></a><br><br>
+<a href='javascript:window.location.href="android.html"'>
+<img width="90%" src="assets/i/an.png"></a>
+</div>
+<div class="am-u-sm-6 am-center">
+<a href="http://weixin.qq.com/r/Q3V2blbEjwvwrRIN9yBR">
+<img width="74%" src="assets/i/wx.jpg"></a>
+</div>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/s_code.js"></script>
+<script src="assets/js/app.min.js"></script>
+<script>
+    s.pageName="下载APP首页";s.server="";s.channel="";s.pageType="";s.prop1="";s.prop2="";s.prop3="";s.prop4="";s.prop5="";s.campaign="";s.state="";s.zip="";s.events="";s.products="";s.purchaseID="";s.eVar1="";s.eVar2="";s.eVar3="";s.eVar4="";s.eVar5="";var s_code=s.t();if(s_code){document.write(s_code)};
+    $(function(){
+   	   if(navigator.userAgent.toLowerCase().match(/MicroMessenger/i)=="micromessenger") {
+              window.location = "http://a.app.qq.com/o/simple.jsp?pkgname=com.rytong.airchina";
+       }  
+       else{
+        switch(browser.language){
+            case 'en':
+                $("#title1").html("&nbsp;AIR CHINA APP");
+                $("#title2").html("&nbsp;&nbsp;Welcome to Air China");
+                $("#title").attr("src","assets/i/t1-en.png");
+                $('#info').html('Travel services, budget air tickets, check-in, update flight info, Phoenix Miles, and convenient services like self-service reschedule and so on Smart service as good as expected Three languages supported- Chinese, English and Japanese available .');$('#acdown').hide();
+                break;
+            case 'ja':
+                $("#title1").html("&nbsp;エアチャイナアプリ");
+                $("#title2").html("&nbsp;&nbsp;エアチャイナアプリへようこそ");
+                $("#title").attr("src","assets/i/t1-ja.png");
+                $('#info').html(' 今すぐダウンロード：日本語でエアチャイナのいろいろな情報を取得できます。お得な航空券のご案内・Ｗｅｂチェックイン・運航状況、フェニックスマイル、各種マイレージサービス等ご利用いただけます。尚、中国語、英語の選択も可能です。');$('#acdown').hide();
+                break;
+            default:
+                $("#title").attr("src","assets/i/t1.png");
+                $('#info').html('出行管家、特价机票、办理乘机、航班动态、凤凰知音、自助改期等简便操作 随时随心,贴身服务尽善尽美还有中、英、日三种语言可供选择');
+        }
+    }
+})
+ 	function downios()
+    {
+        window.location="https://itunes.apple.com/cn/app/id361964929?mt=8";
+    }
+
+    </script>
+<noscript>
+    <img src="http://airchina.112.2o7.net/b/ss/acna-jq-cn-prd/1/H.26--NS/0?[AQB]&cdp=3&[AQE]" height="1" width="1" border="0" alt="" />
+</noscript>
+</body>
+</html>

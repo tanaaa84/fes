@@ -18,4 +18,6 @@ public interface ISearchOrderService {
 	public List<SearchOrder> searchOrderListByName(String name);
 	
 	public List<SearchOrder> searchOrderListByOrderNo(String orderNo);
+	
+	public List<SearchOrder> searchOrderListByParam(String orderNo);
 }

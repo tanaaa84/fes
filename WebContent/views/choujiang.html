@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8" />
+<SCRIPT LANGUAGE="JavaScript">
+	var alldata = "张三,李四,常青" //抽奖的姓名，以,为分隔   
+
+	var alldataarr = alldata.split(",")
+	var num = alldataarr.length - 1
+	var timer
+	function change() {
+		//document.getElementById("oknum").value = alldataarr[GetRnd(0, num)];
+		
+		document.getElementById("oknum1").innerHTML = alldataarr[GetRnd(0, num)];
+		
+	}
+
+	function start() {
+		clearInterval(timer);
+		timer = setInterval('change()', 50); //50（毫秒）为变换间隔，越小变换的越快   
+	}
+
+	function ok() {
+		clearInterval(timer);
+	}
+
+	function GetRnd(min, max) {
+		return parseInt(Math.random() * (max - min + 1));
+	}
+	
+	
+	
+	
+</SCRIPT>
+
+<style type="text/css">
+
+#oknum1 {
+position: absolute;
+top: 30%;
+left: 35%;
+height: 50%;
+width: 50%;
+
+font-size:150px;
+}
+
+</style>
+
+
+</head>
+<body>
+
+	模拟抽奖：
+<!-- 	<input type="lable" id="oknum" name="oknum" value="" width="300px" height="200px">
+ -->	
+ 
+ <div id="oknum1">
+	
+	</div>
+	
+	<button onclick="start()" accesskey="s">
+		开始(<U>S</U>)
+	</button>
+	<button onclick="ok()" accesskey="o">
+		停止(<U>O</U>)
+	</button>
+
+</body>
+</html>

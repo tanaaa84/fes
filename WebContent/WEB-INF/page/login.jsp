@@ -77,7 +77,7 @@
 
 		<form class="form-vertical login-form" action="index.html">
 
-			<h3 class="form-title">登录您的账号</h3>
+			<h3 class="form-title">登录您的账号1</h3>
 
 			<div class="alert alert-error hide">
 

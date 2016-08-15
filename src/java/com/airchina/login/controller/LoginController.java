@@ -19,4 +19,15 @@ public class LoginController {
 		mav.setViewName("login");
 		return mav;
 	}
+	
+	
+	@RequestMapping(value = "/weixin", method = RequestMethod.GET)
+	public ModelAndView weixin(HttpServletRequest request, HttpSession session, Test tt) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("weixin_share");
+		return mav;
+	}
+	
+	
+	
 }

@@ -17,5 +17,24 @@
 	<select id="searchOrderListByOrderNo" parameterType="String" resultType="com.airchina.searchorder.model.SearchOrder">  
   	 	SELECT * FROM bb_sales_order_info_t WHERE REGISTER_NUMBER=#{orderNo}
 	</select>
+	
+	
+	
+	
+	<select id="searchOrderListByParam" parameterType="String" resultType="com.airchina.searchorder.model.SearchOrder">  
+  	 	SELECT * FROM bb_sales_order_info_t
+	
+    <where>  
+        <if test="orderNo !=null ">  
+            register_number = #{orderNo}
+        </if>  
+    </where>    
+	</select>
+	
+	
+	
+	
+	
+	
 
 </mapper>

@@ -1,18 +1,18 @@
 package com.airchina.login.controller;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.HashMap;
+import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +29,7 @@ public class PassbookController {
 			HttpServletResponse response, HttpSession session, Test tt) {
 
 		try {
-			String filePath = "/Users/tanyanbing/passbook/checkIn/PEK/PEK999-712712770.pkpass";
+			String filePath = "/Users/tanyanbing/passbook/checkIn/PEK/PEK999-712712888.pkpass";
 
 			File file = new File(filePath);
 			response.setContentType("application/vnd.apple.pkpass");
@@ -119,7 +119,7 @@ public class PassbookController {
 		
 
 		try {
-			String filePath = "/Users/tanyanbing/passbook/checkIn/PEK/PEK999-712712770.pkpass";
+			String filePath = "/Users/tanyanbing/passbook/checkIn/PEK/PEK999-712712888.pkpass";
 
 			File file = new File(filePath);
 			response.setContentType("application/vnd.apple.pkpass");
@@ -183,21 +183,25 @@ public class PassbookController {
 		System.out.println(dd);
 		System.out.println(ee);
 
-		HashMap<String, Object> tmp = new HashMap<String, Object>();
-		tmp.put("lastUpdated", System.currentTimeMillis() / 1000 + "");
-		tmp.put("serialNumbers",
-				"checkIn,PEK999-712712770");
-
-		String jsonObject = JSONObject.toJSONString(tmp);
-
-		System.out.println(jsonObject);
+//		HashMap<String, Object> tmp = new HashMap<String, Object>();
+//		tmp.put("lastUpdated", System.currentTimeMillis() / 1000 + "");
+//		tmp.put("serialNumbers","[\"2j31298h9d23d98hf0hd30h9d2390hd0923hd3029dh\"]");
+//
+//		String jsonObject = JSONObject.toJSONString(tmp);
+//
+//		System.out.println(jsonObject);
+//		
 		
+		System.out.println(System.currentTimeMillis());
+		String lastUpdated = System.currentTimeMillis() / 1000 + "";
+		String jsonObject = "{\"lastUpdated\":\""+ lastUpdated +"\",\"serialNumbers\":[\"2j31298h9d23d98hf0hd30h9d2390hd0923hd3029dh\"]}";
 		response.getWriter().print(jsonObject);
+		response.setStatus(HttpServletResponse.SC_OK);
+		
+//		response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
 		
 		
 		
-		
-		 response.setStatus(HttpServletResponse.SC_CREATED);
 		
 		 System.out.println("");
 		
@@ -307,7 +311,7 @@ public class PassbookController {
      * @return resp
      * @throws Exception
      */
-	@RequestMapping("/update/{aa}/{bb}/{cc}/{dd}/{ee}/{ff}")
+	@RequestMapping(value = "/update/{aa}/{bb}/{cc}/{dd}/{ee}/{ff}", method = RequestMethod.POST)
     public @ResponseBody void  reg(HttpServletRequest request,HttpServletResponse response,@PathVariable("aa") String aa,
 			@PathVariable("bb") String bb, @PathVariable("cc") String cc, @PathVariable("dd") String dd, @PathVariable("ee") String ee, @PathVariable("ff") String ff) throws Exception {
        System.out.println("res2-6------" + request.getMethod());
@@ -320,10 +324,71 @@ public class PassbookController {
        System.out.println(ee);
        System.out.println(ff);
        
+       
+       
+       
+       
+		Enumeration<?> paramNames = request.getParameterNames();
+		String params = "";
+		while (paramNames.hasMoreElements()) {
+			String paramName = paramNames.nextElement().toString();
+			String paramValue = request.getParameter(paramName);
+
+			System.out.print(paramName);
+			System.out.println(":  " + paramValue);
+		}
+
+		request.setCharacterEncoding("UTF-8");
+		Enumeration<String> enu = request.getHeaderNames();
+		while (enu.hasMoreElements()) {
+			String headerName = enu.nextElement();
+			System.out.println(headerName + ":  "
+					+ request.getHeader(headerName));
+		}
+       
+		
+		
+		BufferedReader br = request.getReader();
+
+		String str, wholeStr = "";
+		while((str = br.readLine()) != null){
+		wholeStr += str;
+		}
+		System.out.println(wholeStr);
+		
+       
+       
+       
+       
        response.setStatus(HttpServletResponse.SC_CREATED);
        System.out.println("");
     }
 
+	
+	
+	
+	
+	  /**
+     * 删除pass
+     * @return resp
+     * @throws Exception
+     */
+	@RequestMapping(value = "/update/{aa}/{bb}/{cc}/{dd}/{ee}/{ff}", method = RequestMethod.DELETE)
+    public @ResponseBody void  regdelete(HttpServletRequest request,HttpServletResponse response,@PathVariable("aa") String aa,
+			@PathVariable("bb") String bb, @PathVariable("cc") String cc, @PathVariable("dd") String dd, @PathVariable("ee") String ee, @PathVariable("ff") String ff) throws Exception {
+       System.out.println("delete-6------" + request.getMethod());
+		
+       
+       System.out.println(aa);
+       System.out.println(bb);
+       System.out.println(cc);
+       System.out.println(dd);
+       System.out.println(ee);
+       System.out.println(ff);
+       
+       response.setStatus(HttpServletResponse.SC_OK);
+       System.out.println("");
+    }
 	
 	
 	
