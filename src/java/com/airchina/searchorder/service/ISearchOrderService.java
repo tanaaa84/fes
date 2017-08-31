@@ -20,4 +20,6 @@ public interface ISearchOrderService {
 	public List<SearchOrder> searchOrderListByOrderNo(String orderNo);
 	
 	public List<SearchOrder> searchOrderListByParam(String orderNo);
+	
+	public String searchPaymentRateByDate(String date, String payStstus);
 }

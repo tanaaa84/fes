@@ -70,4 +70,13 @@ public class SearchOrderServiceImpl implements ISearchOrderService {
 		// TODO Auto-generated method stub
 		return som.searchOrderListByParam(orderNo);
 	}
+	
+	@Override
+	public String searchPaymentRateByDate(String date, String payStstus) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("^^^^^^^^"+date);
+		return som.searchPaymentRateByDate(date, payStstus);
+	}
+	
 }

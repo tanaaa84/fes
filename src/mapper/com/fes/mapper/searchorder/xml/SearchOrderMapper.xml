@@ -9,32 +9,53 @@
 
 	<parameterMap type="com.airchina.searchorder.model.SearchOrder" id="searchorder" />
 
-	<select id="searchOrderListByAll" parameterType="int" resultType="com.airchina.searchorder.model.SearchOrder">  
-  	 	SELECT * FROM bb_sales_order_info_t WHERE accept_date LIKE TO_DATE ('2015-05-21', 'yyyy-mm-dd')
-	</select>  
+	<select id="searchOrderListByAll" parameterType="int" resultType="com.airchina.searchorder.model.SearchOrder">
+		SELECT * FROM bb_sales_order_info_t WHERE accept_date LIKE TO_DATE
+		('2015-05-21', 'yyyy-mm-dd')
+	</select>
 
 
-	<select id="searchOrderListByOrderNo" parameterType="String" resultType="com.airchina.searchorder.model.SearchOrder">  
-  	 	SELECT * FROM bb_sales_order_info_t WHERE REGISTER_NUMBER=#{orderNo}
+	<select id="searchOrderListByOrderNo" parameterType="String" resultType="com.airchina.searchorder.model.SearchOrder">
+		SELECT * FROM bb_sales_order_info_t WHERE REGISTER_NUMBER=#{orderNo}
 	</select>
-	
-	
-	
-	
-	<select id="searchOrderListByParam" parameterType="String" resultType="com.airchina.searchorder.model.SearchOrder">  
-  	 	SELECT * FROM bb_sales_order_info_t
-	
-    <where>  
-        <if test="orderNo !=null ">  
-            register_number = #{orderNo}
-        </if>  
-    </where>    
+
+
+
+
+	<select id="searchOrderListByParam" parameterType="String" resultType="com.airchina.searchorder.model.SearchOrder">
+		SELECT * FROM bb_sales_order_info_t
+
+		<where>
+			<if test="orderNo !=null ">
+				register_number = #{orderNo}
+			</if>
+		</where>
 	</select>
+
+
+	<select id="searchPaymentRateByDate" parameterType="String" resultType="String">
+   
+    SELECT  count(p.id)
+    FROM bb_sales_order_info_t o, bb_payment_info_t p
+   WHERE     
+ 	 o.register_status = 3
+         AND o.mobile_type = 'H5'
+         AND o.register_number = p.register_number
+      <if test="payStatus != null and payStatus != ''">   
+		 AND p.payment_status = #{payStatus}
+      </if>
+      <if test="date != null and date != ''">
+	   and to_char(o.accept_date,'YYYY-MM-DD')&gt;=#{date}
+	  </if>
+	  <if test="date != null and date != ''">
+	  and to_char(o.accept_date,'YYYY-MM-DD')&lt;=#{date}
+	  </if>
+              
 	
-	
-	
-	
-	
-	
+	</select>
+<!-- 
+and o.accept_date &lt;= to_date(#{date} 23:59:59, 'yyyy-MM-dd hh24:mi:ss')
+ -->
+
 
 </mapper>

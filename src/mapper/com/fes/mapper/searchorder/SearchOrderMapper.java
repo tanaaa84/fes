@@ -24,4 +24,8 @@ public interface SearchOrderMapper {
 	public List<SearchOrder> searchOrderListByOrderNo(@Param(value = "orderNo") String orderNo);
 	
 	public List<SearchOrder> searchOrderListByParam(@Param(value = "orderNo") String orderNo);
+	
+	public String searchPaymentRateByDate(@Param(value = "date") String date,@Param(value = "payStatus") String payStatus);
+
+	
 }
