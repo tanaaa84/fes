@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fes.mapper.login.LoginMapper">
+	<resultMap type="com.airchina.login.model.User" id="user" autoMapping="true" />
+	<parameterMap type="com.airchina.login.model.User" id="user" />
+	
+	<select id="login" parameterType="String" resultType="com.airchina.login.model.User">
+   
+    SELECT *
+    FROM user_t 
+    WHERE   member_number =#{userName}  and password=#{password}
+   			or
+   			mobile_number =#{userName}  and password=#{password}        
+	
+	</select>
+
+
+</mapper>
