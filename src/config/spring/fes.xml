@@ -48,17 +48,17 @@
       <property name="password" value="airchina" />
        -->
       
-      	 <!--
+   	 <!--
       <property name="url" value="jdbc:oracle:thin:@10.9.242.23:1521/b2cdb" />
       <property name="username" value="b2c_app_user" />
       <property name="password" value="b2c_app_xxp16" />
-	   --> 
+   --> 
 	
-	
+	   
 	  <property name="url" value="jdbc:oracle:thin:@10.10.111.177:1521:airchina" />
       <property name="username" value="tanyanbing" />
       <property name="password" value="tanyanbing" />
-	
+		
 	
       <!-- 配置初始化大小、最小、最大 -->
       <property name="initialSize" value="10" />

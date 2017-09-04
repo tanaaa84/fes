@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fes.mapper.airport.AirportMapper">
+	<resultMap type="com.airchina.airport.model.Airport" id="airport" autoMapping="true" />
+	<parameterMap type="com.airchina.airport.model.Airport" id="airport" />
+
+	<select id="queryAirports"  resultType="com.airchina.airport.model.Airport">
+
+		select airport_code as airportcode,airport_name as
+		airportname,city_name as cityname,international_flag as
+		internationalflag,city_sort as citysort,longitude,latitude
+		from airport_t 
+
+	</select>
+
+
+</mapper>

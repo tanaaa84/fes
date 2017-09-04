@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import sun.tools.tree.ThisExpression;
-
 import com.airchina.login.model.User;
 import com.airchina.login.service.ILoginService;
 import com.alibaba.fastjson.JSON;

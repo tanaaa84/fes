@@ -9,7 +9,7 @@
 	</appender>
 
 	<appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="file" value="D:/logs/fes.log" />
+		<param name="file" value="/Users/tanyanbing/Downloads/fes.log" />
 		<param name="append" value="true" />
 		<param name="encoding" value="UTF-8" />
 		<param name="threshold" value="debug" />
@@ -17,6 +17,10 @@
 			<param name="ConversionPattern" value="[%5p]{%d} %m%n" />
 		</layout>
 	</appender>
+
+
+
+
 
 	<category name="org.springframework">
 		<level value="ERROR" />
