@@ -16,6 +16,15 @@
    			mobile_number =#{userName}  and password=#{password}        
 	
 	</select>
+	
+	
+	<select id="loginByUserID" parameterType="String" resultType="com.airchina.login.model.User">
+   
+    SELECT *
+    FROM user_t 
+    WHERE   user_id =#{userID}
+	
+	</select>
 
 
 </mapper>

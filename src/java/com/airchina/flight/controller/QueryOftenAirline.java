@@ -53,9 +53,12 @@ public class QueryOftenAirline {
 		alArrayList.add(map2);
 		alArrayList.add(map3);
 		
-		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> map0 = new HashMap<String, Object>();
 		
-		map.put("airline", alArrayList);
+		map0.put("airline", alArrayList);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("body", map0);
 		
 		String json = JSON.toJSONString(map);
 		

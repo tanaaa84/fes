@@ -12,4 +12,6 @@ public interface LoginMapper {
 
 	public List<User> login(@Param(value = "userName") String username, @Param(value = "password") String password);
 
+	public List<User> loginByUserID(@Param(value = "userID") String userID);
+
 }

@@ -26,4 +26,12 @@ public class LoginServiceImpl implements ILoginService {
 		return lm.login(username, password);
 	}
 
+	
+	@Override
+	public List<User> login(String userID) {
+		// TODO Auto-generated method stub
+		return lm.loginByUserID(userID);
+	}
+	
+	
 }

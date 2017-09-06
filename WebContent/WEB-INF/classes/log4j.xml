@@ -7,6 +7,8 @@
 			<param name="ConversionPattern" value="[%5p]{%d} %m%n" />
 		</layout>
 	</appender>
+	
+
 
 	<appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
 		<param name="file" value="/Users/tanyanbing/Downloads/fes.log" />

@@ -284,7 +284,10 @@ public class AccessToHttp {
 	
 	public static void main(String[] args) {
 		try {
-			postBody("https://mss.rsscc.com/dynamic/flight?user=airchina&cmd=flyno&sCity=HGH&eCity=PEK&date=2017-07-24&vNum=CA1566","");
+//			postBody("https://mss.rsscc.com/dynamic/flight?user=airchina&cmd=flyno&sCity=HGH&eCity=PEK&date=2017-07-24&vNum=CA1566","");
+		
+			postBody("http://127.0.0.1:8090/fes/login","{request:{\"username\": \"18601023861\",\"password\":\"123456\"}}");
+		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

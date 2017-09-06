@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fes.mapper.coupon.CouponMapper">
+	<resultMap type="com.airchina.coupon.model.Coupon" id="coupon" autoMapping="true" />
+	<parameterMap type="com.airchina.coupon.model.Coupon" id="coupon" />
+
+	<select id="queryCoupon" parameterType="String"  resultType="com.airchina.coupon.model.Coupon">
+			select * from coupon_t where userID=#{userID}
+			
+			<if test="status !=null and status != ''">
+			 and status = #{status}
+			</if>
+	
+	</select>
+
+
+
+	<select id="useCoupon" parameterType="String"  resultType="com.airchina.coupon.model.Coupon">
+			update coupon_t set status=#{actionCode} where userid=#{userID} and couponCode=#{couponCode}
+
+	</select>
+	
+	
+	
+	<select id="addCoupon" parameterType="String"  resultType="com.airchina.coupon.model.Coupon">
+			insert into coupon_t (couponCode,status,couponPrice,createDate,startDate,endDate,userID) values(#{couponCode},#{status},#{couponPrice},#{createDate},#{startDate},#{endDate},#{userID})
+			
+	</select>
+
+
+</mapper>

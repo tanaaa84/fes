@@ -41,10 +41,11 @@ public class AirportController {
 		
 		List<Airport> airportList = iQueryAirport.queryAirports();
 		
-		System.out.println(airportList.size());
+		Map<String, Object> map0 = new HashMap<String, Object>();
+		map0.put("airport", airportList);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("body", airportList);
+		map.put("body", map0);
 		
 		String json = JSON.toJSONString(map);
 		
