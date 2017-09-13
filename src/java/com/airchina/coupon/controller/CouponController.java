@@ -11,8 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,7 +29,7 @@ import com.alibaba.fastjson.JSONObject;
 @Controller
 public class CouponController {
 
-	private static final Logger log = LoggerFactory.getLogger(CouponController.class);
+	Logger   log=Logger.getLogger(this.getClass().getName()); 
 
 	@Resource(name = "couponServiceImpl")
 	private ICouponService iCouponService;

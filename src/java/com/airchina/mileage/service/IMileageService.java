@@ -12,5 +12,6 @@ public interface IMileageService {
 
 	public List<Mileage> mileageDeduction(String mileage, String userID);
 
+	public List<Mileage> addMileage(String userID, String mileageBalance, String updateTime);
 
 }

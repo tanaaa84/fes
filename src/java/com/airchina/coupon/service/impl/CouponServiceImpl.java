@@ -83,5 +83,12 @@ public class CouponServiceImpl implements ICouponService {
         }  
         return val;  
     }  
+    
+    public static void main(String[] args) {
+    	System.out.println(	new CouponServiceImpl().getStringRandom(16));
+	}
+    
+    
+    
 
 }

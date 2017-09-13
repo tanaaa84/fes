@@ -36,4 +36,11 @@ public class MileageServiceImpl implements IMileageService {
 		return som.mileageDeduction(mileage, userID);
 	}
 
+	@Override
+	public List<Mileage> addMileage(String userID, String mileageBalance,
+			String updateTime) {
+		
+		return som.addMileage(userID, mileageBalance, updateTime);
+	}
+
 }

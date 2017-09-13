@@ -11,8 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,20 +19,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.airchina.airport.controller.AirportController;
+import com.airchina.login.model.User;
+import com.airchina.login.service.ILoginService;
 import com.airchina.mileage.model.Mileage;
 import com.airchina.mileage.service.IMileageService;
+import com.airchina.util.TimeHelper;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 @Controller
 public class MileageController {
 
-	private static final Logger log = LoggerFactory
-			.getLogger(AirportController.class);
+	Logger   log=Logger.getLogger(this.getClass().getName()); 
 
 	@Resource(name = "mileageServiceImpl")
 	private IMileageService iMileageService;
+	
+	
+	@Resource(name = "loginServiceImpl")
+	private ILoginService iLoginService;
+
+	
 
 	/**
 	 * 里程查询
@@ -102,26 +108,42 @@ public class MileageController {
 		String mileage = data.getString("mileage");
 
 		if (userID != null && !userID.isEmpty()) {
-					
-			iMileageService.mileageAccumulation(mileage, userID);
 			
-			//TODO 操作记录
-			List<Mileage> mileageList = iMileageService.mileageInquiry(userID);
+			List<User> users = iLoginService.login(userID);
+			
+			if(users.size() > 0){
+				List<Mileage> mileages =	iMileageService.mileageInquiry(userID);
+				
+				
+				if(mileages.size() > 0){
+					iMileageService.mileageAccumulation(mileage, userID);
+				}else{
+					iMileageService.addMileage(userID, mileage, TimeHelper.getCurrentTime()+"");
+				}
+				
 
-			if (mileageList.size() > 0) {
-				Map<String, String> status = new HashMap<String, String>();
-				status.put("code", "0");
-				status.put("msg", "");
+				//TODO 操作记录
+				List<Mileage> mileageList = iMileageService.mileageInquiry(userID);
+	
+				if (mileageList.size() > 0) {
+					Map<String, String> status = new HashMap<String, String>();
+					status.put("code", "0");
+					status.put("msg", "");
+					Map<String, Object> map = new HashMap<String, Object>();
+					map.put("status", status);
+					map.put("body", mileageList.get(0));
+					String jsonString = JSON.toJSONString(map);
+					log.info(jsonString);
+	
+					res.setCharacterEncoding("UTF-8");
+					res.setContentType("text/json;charset=utf-8");
+					PrintWriter out = res.getWriter();
+					out.println(jsonString);
+				}
+			}else {
 				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("status", status);
-				map.put("body", mileageList.get(0));
-				String jsonString = JSON.toJSONString(map);
-				log.info(jsonString);
-
-				res.setCharacterEncoding("UTF-8");
-				res.setContentType("text/json;charset=utf-8");
-				PrintWriter out = res.getWriter();
-				out.println(jsonString);
+				map.put("status", "10002");
+				map.put("msg", "用户不存在");
 			}
 		}
 	}
@@ -148,25 +170,38 @@ public class MileageController {
 		JSONObject data = (JSONObject) jsonObj.get("request");
 		String userID = data.getString("userID");
 		String mileage = data.getString("mileage");
-
+		String password = data.getString("password");
 		if (userID != null && !userID.isEmpty()) {
+			
+			
+			
+			List<User> users =	iLoginService.login(userID);
+			
+			if (users.size() > 0) {
+				
 			iMileageService.mileageDeduction(mileage, userID);
-			//TODO 操作记录
-			List<Mileage> mileageList = iMileageService.mileageInquiry(userID);
-			if (mileageList.size() > 0) {
-				Map<String, String> status = new HashMap<String, String>();
-				status.put("code", "0");
-				status.put("msg", "");
-				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("status", status);
-				map.put("body", mileageList.get(0));
-				String jsonString = JSON.toJSONString(map);
-				log.info(jsonString);
+				//TODO 操作记录
+				List<Mileage> mileageList = iMileageService.mileageInquiry(userID);
+				if (mileageList.size() > 0) {
+					Map<String, String> status = new HashMap<String, String>();
+					status.put("code", "0");
+					status.put("msg", "");
+					Map<String, Object> map = new HashMap<String, Object>();
+					map.put("status", status);
+					map.put("body", mileageList.get(0));
+					String jsonString = JSON.toJSONString(map);
+					log.info(jsonString);
+	
+					res.setCharacterEncoding("UTF-8");
+					res.setContentType("text/json;charset=utf-8");
+					PrintWriter out = res.getWriter();
+					out.println(jsonString);
+				}else{
+					Map<String, Object> map = new HashMap<String, Object>();
+					map.put("status", "10002");
+					map.put("msg", "用户不存在");
+				}
 
-				res.setCharacterEncoding("UTF-8");
-				res.setContentType("text/json;charset=utf-8");
-				PrintWriter out = res.getWriter();
-				out.println(jsonString);
 			}
 		}
 	}

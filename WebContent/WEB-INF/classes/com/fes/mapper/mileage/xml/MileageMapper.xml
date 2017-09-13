@@ -21,6 +21,14 @@
    		update mileage_t set MILEAGE_BALANCE = (MILEAGE_BALANCE - #{mileage}) WHERE user_id=#{userID}
    
 	</select>
+	
+	
+	<select id="addMileage" parameterType="String" resultType="com.airchina.mileage.model.Mileage">
+   		insert into  mileage_t (user_ID, mileage_balance,update_time) values(#{userID}, #{mileageBalance},#{updateTime}) 
+   
+	</select>
+	
+	
 
 
 </mapper>

@@ -16,6 +16,9 @@ public interface MileageMapper {
 
 	public List<Mileage> mileageDeduction(@Param(value = "mileage") String mileage, @Param(value = "userID") String userID);
 
+	public List<Mileage> addMileage(@Param(value = "userID") String userID,@Param(value = "mileageBalance") String mileageBalance,@Param(value = "updateTime") String updateTime);
+	
+	
 }
 
 

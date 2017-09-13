@@ -54,5 +54,7 @@
 	<root>
 		<priority value="ERROR" />
 		<appender-ref ref="Console" />
+		<level value="ALL"/>
+        
 	</root>
 </log4j:configuration>
